@@ -14,13 +14,34 @@ const appData = {
         { id: "animal", name: "🌳 Animal Kingdom" }
     ],
     itinerary: [
-        { date: "10/10", park: "Chegada em Orlando ✈️" },
-        { date: "11/10", park: "🎬 Universal Studios Florida" },
-        { date: "12/10", park: "🚀 Universal Epic Universe" },
-        { date: "13/10", park: "🦖 Universal Islands of Adventure" },
-        { date: "14/10", park: "🏰 Magic Kingdom" },
-        { date: "15/10", park: "🎥 Disney's Hollywood Studios" },
-        { date: "16/10", park: "🌳 Disney's Animal Kingdom" }
+  {
+    "date": "10/09",
+    "title": "Chegada em Orlando ✈️"
+  },
+  {
+    "date": "11/09",
+    "title": "🦁 Disney's Animal Kingdom"
+  },
+  {
+    "date": "12/09",
+    "title": "🎬 Universal Studios + 🧙 Islands of Adventure"
+  },
+  {
+    "date": "13/09",
+    "title": "🌌 Universal Epic Universe"
+  },
+  {
+    "date": "14/09",
+    "title": "🚢 Cruzeiro Disney (Embarque)"
+  },
+  {
+    "date": "18/09",
+    "title": "🏰 Magic Kingdom"
+  },
+  {
+    "date": "19/09",
+    "title": "🛍️ Outlet / Disney Springs & Voo de Retorno"
+  }
     ],
     attractions: [
         // ==================== UNIVERSAL STUDIOS ====================
