@@ -1,49 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Orlando Companion</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orlando 2026 • Guia de Viagem</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div id="app">
+    <!-- Menu Superior Fixo (Perfis e Parques) -->
+    <nav id="navbar"></nav>
 
-    <header id="hero">
+    <!-- Conteúdo Dinâmico (Home ou Atrações dos Parques) -->
+    <main id="app" class="container"></main>
 
-        <div>
-
-            <h1>🎢 Orlando Companion</h1>
-
-            <p>
-                11–19 Setembro • Orlando 2026
-            </p>
-
-        </div>
-
-        <div id="profileSelector"></div>
-
-    </header>
-
-    <main id="content"></main>
-
-</div>
-
-<script src="data.js"></script>
-<script src="script.js"></script>
-
+    <!-- Scripts (O data.js DEVE vir primeiro) -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
