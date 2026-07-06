@@ -14,34 +14,13 @@ const appData = {
         { id: "animal", name: "🌳 Animal Kingdom" }
     ],
     itinerary: [
-        {
-            "date": "10/09",
-            "title": "Chegada em Orlando ✈️"
-        },
-        {
-            "date": "11/09",
-            "title": "🦁 Disney's Animal Kingdom"
-        },
-        {
-            "date": "12/09",
-            "title": "🎬 Universal Studios + 🧙 Islands of Adventure"
-        },
-        {
-            "date": "13/09",
-            "title": "🌌 Universal Epic Universe"
-        },
-        {
-            "date": "14/09",
-            "title": "🚢 Cruzeiro Disney (Embarque)"
-        },
-        {
-            "date": "18/09",
-            "title": "🏰 Magic Kingdom"
-        },
-        {
-            "date": "19/09",
-            "title": "🛍️ Outlet / Disney Springs & Voo de Retorno"
-        }
+        { "date": "10/09", "title": "Chegada em Orlando ✈️" },
+        { "date": "11/09", "title": "🦁 Disney's Animal Kingdom" },
+        { "date": "12/09", "title": "🎬 Universal Studios + 🧙 Islands of Adventure" },
+        { "date": "13/09", "title": "🌌 Universal Epic Universe" },
+        { "date": "14/09", "title": "🚢 Cruzeiro Disney (Embarque)" },
+        { "date": "18/09", "title": "🏰 Magic Kingdom" },
+        { "date": "19/09", "title": "🛍️ Outlet / Disney Springs & Voo de Retorno" }
     ],
     attractions: [
         // ==================== UNIVERSAL STUDIOS ====================
@@ -160,7 +139,7 @@ const appData = {
             type: "🚂 Trem temático que conecta os dois parques.",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
-                giu: "Um trem real e calmo. A graça está nas telas das janelas mostrando os personagens.",
+                giu: "Um train real e calmo. A graça está nas telas das janelas mostrando os personagens.",
                 ester: "Super relaxante e útil para trocar de parque sem andar.",
                 gabriel: "A imersão da cabine é perfeita para os fãs."
             }
@@ -180,7 +159,7 @@ const appData = {
             type: "💥 Show de dublês de ação com efeitos especiais.",
             fear: { giu: 1, ester: 1, gabriel: 0 },
             recommendation: {
-                giu: "Você assists sentado no teatro. Dá aquele susto leve com rajadas de vento e calor das explosões, mas sem impacto físico.",
+                giu: "Você assiste sentado no teatro. Dá aquele susto leve com rajadas de vento e calor das explosões, mas sem impacto físico.",
                 ester: "A tecnologia da tela de fundo engana os olhos de tão perfeita. Imperdível!",
                 gabriel: "O melhor show de dublês do mundo atualmente, coreografias perfeitas."
             }
@@ -209,7 +188,7 @@ const appData = {
         },
         {
             id: "e_dk", park: "epic", name: "Mine-Cart Madness (Donkey Kong)", express: true,
-            type: "🍌 Montanha-russa de projeção com efeito de 'salto' sobre trilhos.",
+            type: "🍌 Montanha-russa de projeção com effect de 'salto' sobre trilhos.",
             fear: { giu: 6, ester: 5, gabriel: 3 },
             recommendation: {
                 giu: "O carrinho parece pular buracos no trilho. Dá pequenos frios na barriga pela surpresa visual, mas não tem quedas colossais.",
@@ -243,7 +222,7 @@ const appData = {
             fear: { giu: 4, ester: 3, gabriel: 1 },
             recommendation: {
                 giu: "Os carrinhos se movem subindo e descendo rápido pelo Ministério. Tem uma cena de queda de elevador simulada que dá um frio na barriga rápido.",
-                ester: "Cenários imensos e projeções lindas, o movemento do carrinho acompanha a ação.",
+                ester: "Cenários imensos e projeções lindas, o movimento do carrinho acompanha a ação.",
                 gabriel: "Imersão total, você se sente dentro do filme do Harry Potter."
             }
         },
@@ -466,90 +445,4 @@ const appData = {
             recommendation: {
                 giu: "Voo lento nas alturas. Não tem quedas ou acelerações. Nota: adultos só sobem se estiverem acompanhando uma criança.",
                 ester: "Passeio calmo para ver a floresta artificial de cima.",
-                gabriel: "Atração restrita para quem viaja sem crianças pequenas."
-            }
-        },
-        {
-            id: "i_seuss", park: "islands", name: "High in the Sky Seuss Trolley Train Ride!", express: true,
-            type: "🚂 Trenzinho elevado que passa por dentro da área infantil.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Um passeio de train super calmo e lento nos trilhos suspensos. Perfeito para relaxar e tirar fotos.",
-                ester: "Super fofinho para ver o colorido da área infantil de cima.",
-                gabriel: "Passeio parado para descansar os pés após as caminhadas longas."
-            }
-        },
-        {
-            id: "i_storm", park: "islands", name: "Storm Force Accelatron", express: true,
-            type: "🌀 Atração das xícaras giratórias com tema dos X-Men.",
-            fear: { giu: 2, ester: 2, gabriel: 1 },
-            recommendation: {
-                giu: "Zero quedas. O frio na barriga aqui depende puramente de quanto o seu grupo decide girar o volante central.",
-                ester: "Pode dar tontura se o pessoal do carrinho empolgar na rotação.",
-                gabriel: "Clássica mecânica de xícaras de parque de diversões."
-            }
-        },
-        {
-            id: "i_caroseussel", park: "islands", name: "Caro-Seuss-el", express: true,
-            type: "🎠 Carrossel temático com criaturas lúdicas de Dr. Seuss.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "O carrossel clássico do parque, mas com personagens bizarros e divertidos. Movimento circular lento.",
-                ester: "Totalmente relaxante, bom para fotos coloridas.",
-                gabriel: "Brinquedo puramente para crianças ou descanso."
-            }
-        },
-
-        // ==================== MAGIC KINGDOM ====================
-        {
-            id: "m_space", park: "magic", name: "Space Mountain", express: true,
-            type: "🚀 Montanha-russa clássica totalmente no escuro.",
-            fear: { giu: 6, ester: 5, gabriel: 3 },
-            recommendation: {
-                giu: "Ela não é rápida nem tem quedas gigantes, mas o fato de ser no breu total faz com que você não veja nada chegando. Fator surpresa total.",
-                ester: "O carrinho é de assento individual em fila, balança bastante e o escuro assusta um pouco.",
-                gabriel: "Clássico retrô espacial, os trancos nos trilhos antigos são fortes."
-            }
-        },
-        {
-            id: "m_tron", park: "magic", name: "TRON Lightcycle / Run", express: true,
-            type: "🏍️ Montanha-russa de lançamento em alta velocidade.",
-            fear: { giu: 6, ester: 4, gabriel: 2 },
-            recommendation: {
-                giu: "O arranque inicial para a área externa dá um frio na barriga ótimo, mas depois ela flui muito suave, sem quedas verticais pesadas.",
-                ester: "A posição de ir montada na moto é super diferente e confortável. Uma delícia de velocidade.",
-                gabriel: "Visual futurista incrível, mas a pista é um pouco curta, acaba rápido."
-            }
-        },
-        {
-            id: "m_thunder", park: "magic", name: "Big Thunder Mountain Railroad", express: true,
-            type: "🚂 Montanha-russa de trem mineiro clássica.",
-            fear: { giu: 4, ester: 3, gabriel: 2 },
-            recommendation: {
-                giu: "Uma montanha-russa de madeira bem barulhenta. Tem curvas acentuadas e descidas rápidas, mas nada de tirar o estômago do lugar.",
-                ester: "Super divertida e gostosa para começar o dia de parque aquecendo.",
-                gabriel: "Ande no último vagão se quiser que o trem puxe com um pouco mais de velocidade nas descidas."
-            }
-        },
-        {
-            id: "m_dwarfs", park: "magic", name: "Seven Dwarfs Mine Train", express: true,
-            type: "💎 Montanha-russa familiar com carrinhos que balançam.",
-            fear: { giu: 3, ester: 2, gabriel: 1 },
-            recommendation: {
-                giu: "Ela é linda e super dócil. Os carrinhos oscilam nas curvas dando um molejo legal, mas o frio na barriga físico é mínimo.",
-                ester: "Super leve e fofa, a cena dos anões cantando na mina no meio da pista é linda.",
-                gabriel: "Fila costuma ser gigante, vale a pena priorizar com fura-filas."
-            }
-        },
-        {
-            id: "m_tiana", park: "magic", name: "Tiana's Bayou Adventure", express: true,
-            type: "🛶 Passeio de barco na água com uma queda livre grande.",
-            fear: { giu: 7, ester: 6, gabriel: 4 },
-            recommendation: {
-                giu: "O passeio inteiro é calmo e musical, mas termina com uma queda livre clássica de 15 metros. Dá aquele vazio no estômago clássico.",
-                ester: "A queda final dá bastante frio na barriga e espirra bastante água na frente.",
-                gabriel: "Visual reformulado lindo, vale muito a pena conferir."
-            }
-        }
-    ]
-};
+                gabriel: "Atração restrita para quem via
