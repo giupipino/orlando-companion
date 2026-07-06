@@ -112,28 +112,48 @@ function renderAttraction(attraction) {
     const fear = attraction.fear[currentProfile];
     const recommendation = attraction.recommendation[currentProfile];
     
-    // Define a cor da barra baseado no usuário
+    // Define a cor da barra e bordas baseado no usuário ativo
     let color = "#60a5fa";
     if (currentProfile === "giu") color = "#8B5CF6";
     if (currentProfile === "ester") color = "#3B82F6";
     if (currentProfile === "gabriel") color = "#EF4444";
 
     return `
-        <div class="card">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                <h3>${attraction.name}</h3>
-                <span style="font-size: 12px; padding: 4px 8px; border-radius: 12px; background: ${attraction.express ? '#065f46' : '#991b1b'}; color: #fff;">
-                    ${attraction.express ? '⚡ Express' : '❌ No Express'}
-                </span>
-            </div>
+        <div class="card" style="padding: 0; overflow: hidden; margin-bottom: 20px;">
+            <!-- Imagem Temática da Atração -->
+            ${attraction.image ? `
+                <div style="width: 100%; height: 160px; overflow: hidden; position: relative;">
+                    <img src="${attraction.image}" alt="${attraction.name}" style="width: 100%; height: 100%; object-fit: cover;">
+                    <span style="position: absolute; top: 12px; right: 12px; font-size: 11px; padding: 4px 8px; border-radius: 12px; background: ${attraction.express ? '#065f46' : '#991b1b'}; color: #fff; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.4);">
+                        ${attraction.express ? '⚡ Fast/Express' : '❌ Fila Normal'}
+                    </span>
+                </div>
+            ` : ''}
             
-            <p style="margin-top: 10px;">😰 Frio na barriga: <strong>${fear}/10</strong></p>
-            <div style="height: 8px; background: #334155; border-radius: 4px; margin: 8px 0 16px 0; overflow: hidden;">
-                <div style="height: 100%; background: ${color}; width: ${fear * 10}%; transition: width 0.3s ease;"></div>
-            </div>
-            
-            <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border-left: 3px solid ${color};">
-                <p style="color: #e2e8f0; font-style: italic;">"${recommendation}"</p>
+            <!-- Corpo das Informações -->
+            <div style="padding: 16px;">
+                <h3 style="font-size: 18px; margin-bottom: 4px; color: #fff;">${attraction.name}</h3>
+                
+                <!-- Tipo de Atração -->
+                <p style="color: #cbd5e1; font-size: 13px; margin-bottom: 14px; font-style: normal; line-height: 1.4;">
+                    ${attraction.type}
+                </p>
+                
+                <!-- Medidor de Frio na Barriga -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    <p style="font-size: 14px; color: #94a3b8; margin: 0;">😰 Frio na barriga:</p>
+                    <strong style="color: #fff; font-size: 15px;">${fear} / 10</strong>
+                </div>
+                <div style="height: 8px; background: #334155; border-radius: 4px; margin-bottom: 16px; overflow: hidden;">
+                    <div style="height: 100%; background: ${color}; width: ${fear * 10}%; transition: width 0.4s ease-out;"></div>
+                </div>
+                
+                <!-- Comentário / Dica Customizada -->
+                <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; border-left: 3px solid ${color};">
+                    <p style="color: #e2e8f0; font-style: italic; font-size: 13.5px; margin: 0; line-height: 1.5;">
+                        "${recommendation}"
+                    </p>
+                </div>
             </div>
         </div>
     `;
