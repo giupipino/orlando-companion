@@ -26,42 +26,55 @@ const appData = {
 
     parks: [
 
-        {
-            id: "home",
-            name: "🏠 Home"
-        },
+    {
+        id: "animal",
+        name: "Animal Kingdom",
+        emoji: "🦁",
+        date: "11 SET",
+        color: "#2E7D32"
+    },
 
-        {
-            id: "animal",
-            name: "🦁 Animal Kingdom"
-        },
+    {
+        id: "studios",
+        name: "Universal Studios",
+        emoji: "🎬",
+        date: "12 SET",
+        color: "#1565C0"
+    },
 
-        {
-            id: "studios",
-            name: "🎬 Universal Studios"
-        },
+    {
+        id: "islands",
+        name: "Islands of Adventure",
+        emoji: "🧙",
+        date: "12 SET",
+        color: "#7C3AED"
+    },
 
-        {
-            id: "islands",
-            name: "🧙 Islands of Adventure"
-        },
+    {
+        id: "epic",
+        name: "Epic Universe",
+        emoji: "🌌",
+        date: "13 SET",
+        color: "#9333EA"
+    },
 
-        {
-            id: "epic",
-            name: "🌌 Epic Universe"
-        },
+    {
+        id: "hhn",
+        name: "Halloween Horror Nights",
+        emoji: "👻",
+        date: "13 SET",
+        color: "#DC2626"
+    },
 
-        {
-            id: "magic",
-            name: "🏰 Magic Kingdom"
-        },
+    {
+        id: "magic",
+        name: "Magic Kingdom",
+        emoji: "🏰",
+        date: "18 SET",
+        color: "#EC4899"
+    }
 
-        {
-            id: "hhn",
-            name: "👻 Halloween Horror Nights"
-        }
-
-    ],
+],
 
     itinerary: [
 
