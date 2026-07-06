@@ -14,34 +14,34 @@ const appData = {
         { id: "animal", name: "🌳 Animal Kingdom" }
     ],
     itinerary: [
-  {
-    "date": "10/09",
-    "title": "Chegada em Orlando ✈️"
-  },
-  {
-    "date": "11/09",
-    "title": "🦁 Disney's Animal Kingdom"
-  },
-  {
-    "date": "12/09",
-    "title": "🎬 Universal Studios + 🧙 Islands of Adventure"
-  },
-  {
-    "date": "13/09",
-    "title": "🌌 Universal Epic Universe"
-  },
-  {
-    "date": "14/09",
-    "title": "🚢 Cruzeiro Disney (Embarque)"
-  },
-  {
-    "date": "18/09",
-    "title": "🏰 Magic Kingdom"
-  },
-  {
-    "date": "19/09",
-    "title": "🛍️ Outlet / Disney Springs & Voo de Retorno"
-  }
+        {
+            "date": "10/09",
+            "title": "Chegada em Orlando ✈️"
+        },
+        {
+            "date": "11/09",
+            "title": "🦁 Disney's Animal Kingdom"
+        },
+        {
+            "date": "12/09",
+            "title": "🎬 Universal Studios + 🧙 Islands of Adventure"
+        },
+        {
+            "date": "13/09",
+            "title": "🌌 Universal Epic Universe"
+        },
+        {
+            "date": "14/09",
+            "title": "🚢 Cruzeiro Disney (Embarque)"
+        },
+        {
+            "date": "18/09",
+            "title": "🏰 Magic Kingdom"
+        },
+        {
+            "date": "19/09",
+            "title": "🛍️ Outlet / Disney Springs & Voo de Retorno"
+        }
     ],
     attractions: [
         // ==================== UNIVERSAL STUDIOS ====================
@@ -180,7 +180,7 @@ const appData = {
             type: "💥 Show de dublês de ação com efeitos especiais.",
             fear: { giu: 1, ester: 1, gabriel: 0 },
             recommendation: {
-                giu: "Você assiste sentado no teatro. Dá aquele susto leve com rajadas de vento e calor das explosões, mas sem impacto físico.",
+                giu: "Você assists sentado no teatro. Dá aquele susto leve com rajadas de vento e calor das explosões, mas sem impacto físico.",
                 ester: "A tecnologia da tela de fundo engana os olhos de tão perfeita. Imperdível!",
                 gabriel: "O melhor show de dublês do mundo atualmente, coreografias perfeitas."
             }
@@ -243,7 +243,7 @@ const appData = {
             fear: { giu: 4, ester: 3, gabriel: 1 },
             recommendation: {
                 giu: "Os carrinhos se movem subindo e descendo rápido pelo Ministério. Tem uma cena de queda de elevador simulada que dá um frio na barriga rápido.",
-                ester: "Cenários imensos e projeções lindas, o movimento do carrinho acompanha a ação.",
+                ester: "Cenários imensos e projeções lindas, o movemento do carrinho acompanha a ação.",
                 gabriel: "Imersão total, você se sente dentro do filme do Harry Potter."
             }
         },
@@ -547,412 +547,8 @@ const appData = {
             fear: { giu: 7, ester: 6, gabriel: 4 },
             recommendation: {
                 giu: "O passeio inteiro é calmo e musical, mas termina com uma queda livre clássica de 15 metros. Dá aquele vazio no estômago clássico.",
-                ester: "A queda final dá bastante frio na barriga, e o barco joga água na cara na descida.",
-                gabriel: "Reformulação linda da Splash Mountain, músicas ótimas e queda clássica."
-            }
-        },
-        {
-            id: "m_pirates", park: "magic", name: "Pirates of the Caribbean", express: true,
-            type: "🏴‍☠️ Dark Ride clássica de barco indoor.",
-            fear: { giu: 2, ester: 1, gabriel: 0 },
-            recommendation: {
-                giu: "Um passeio super calmo. Há apenas uma mini queda no escuro bem no comecinho que pega desavisados e dá um micro frio na barriga de 1 segundo.",
-                ester: "Tranquilo de tudo, cenários lindos e bonecos muito bem feitos.",
-                gabriel: "Música clássica viciante, imperdível para relaxar no ar-condicionado."
-            }
-        },
-        {
-            id: "m_peterpan", park: "magic", name: "Peter Pan’s Flight", express: true,
-            type: "🧚‍♂️ Carrinhos suspensos estilo navio simulando voo.",
-            fear: { giu: 1, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Você voa por cima da cidade de Londres iluminada. O único mini medo é se tiver muita fobia de altura, pois o trilho é suspenso.",
-                ester: "Passeio clássico e lúdico antigo da Disney, muito calmo.",
-                gabriel: "Mecânica antiga, vale pela nostalgia se a fila estiver aceitável."
-            }
-        },
-        {
-            id: "m_haunted", park: "magic", name: "Haunted Mansion", express: true,
-            type: "👻 Passeio de carrinho no escuro (mansão assombrada).",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Focada em ilusões de ótica e fantasmas divertidos. Sem sustos pesados, sem movimentos bruscos e sem nenhuma queda.",
-                ester: "O clima inicial de mistério é legal, mas o brinquedo é super tranquilo.",
-                gabriel: "Os efeitos de espelho no final do carrinho são muito divertidos."
-            }
-        },
-        {
-            id: "m_buzz", park: "magic", name: "Buzz Lightyear’s Space Ranger Spin", express: true,
-            type: "🚀 Carrinho de tiro a laser interativo.",
-            fear: { giu: 1, ester: 1, gabriel: 0 },
-            recommendation: {
-                giu: "Você controla uma alavanca que faz o carrinho girar 360° enquanto atira. Zero quedas físicas.",
-                ester: "Divertido apostar quem pontua mais do grupo jogando os lasers.",
-                gabriel: "Dica: procure os alvos que piscam ou estão mais escondidos para ganhar mais pontos."
-            }
-        },
-        {
-            id: "m_speedway", park: "magic", name: "Tomorrowland Speedway", express: true,
-            type: "🏎️ Carros de corrida movidos a gasolina em trilho.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Você dirige um carrinho que anda bem devagar preso a uma guia central metálica. Zero adrenalina física.",
-                ester: "Barulhento e cheira a escapamento, mas totalmente livre de frio na estômago.",
-                gabriel: "Brinquedo bem antigo, legal apenas se quiser dirigir um carrinho clássico."
-            }
-        },
-        {
-            id: "m_smallworld", park: "magic", name: "it's a small world", express: true,
-            type: "🌍 Passeio de barco lento e musical contínuo.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "O passeio mais calmo do planeta. Bonecos cantando a mesma música em loop. Feito puramente para descansar.",
-                ester: "Ar-condicionado gelado ótimo para sentar e relaxar os pés.",
-                gabriel: "A música vai ficar grudada na sua cabeça pelo resto da viagem inteira."
-            }
-        },
-        {
-            id: "m_jungle", park: "magic", name: "Jungle Cruise", express: true,
-            type: "🛶 Passeio de barco guiado com animais falsos.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Um tour calmo de barco por rios artificiais. Totalmente sem movimentos bruscos ou quedas.",
-                ester: "A graça da atração depende inteiramente do guia contar as piadas com carisma.",
-                gabriel: "Focado em trocadilhos em inglês, bom passeio calmo para o meio da tarde."
-            }
-        },
-        {
-            id: "m_dumbo", park: "magic", name: "Dumbo the Flying Elephant", express: true,
-            type: "🐘 Atração giratória clássica de elefantinhos.",
-            fear: { giu: 1, ester: 1, gabriel: 0 },
-            recommendation: {
-                giu: "Gira em círculos e você pode controlar um botão para subir ou descer o Dumbo. Bem leve.",
-                ester: "Atração fofa e infantil clássica, bom visual do céu do parque.",
-                gabriel: "Brinquedo puramente tradicional para bater ponto no parque."
-            }
-        },
-        {
-            id: "m_barnstormer", park: "magic", name: "The Barnstormer", express: true,
-            type: "✈️ Montanha-russa infantil muito curta do Pateta.",
-            fear: { giu: 2, ester: 1, gabriel: 0 },
-            recommendation: {
-                giu: "Uma montanha-russa que dura literalmente 40 segundos na pista. Tem uma descida minúscula.",
-                ester: "Feita para crianças perderem o medo, super tranquila para qualquer adulto.",
-                gabriel: "Acaba tão rápido que você nem sente que andou em uma montanha-russa."
-            }
-        },
-        {
-            id: "m_fireworks", park: "magic", name: "Happily Ever After", express: false,
-            type: "🎆 Show de fogos e projeções gigantes no castelo.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Assistido de pé na praça. O único frio na barriga aqui é a emoção de chorar ouvindo as músicas clássicas da Disney!",
-                ester: "Incrível, o momento mais bonito e mágico de toda a viagem.",
-                gabriel: "Chegue cedo para pegar um bom lugar na avenida central com boa visão."
-            }
-        },
-
-        // ==================== HOLLYWOOD STUDIOS ====================
-        {
-            id: "h_tower", park: "hollywood", name: "The Twilight Zone Tower of Terror", express: true,
-            type: "🏢 Elevador de queda livre vertical aleatória no escuro.",
-            fear: { giu: 10, ester: 8, gabriel: 5 },
-            recommendation: {
-                giu: "O maior teste de estômago da Disney. O elevador despenca no escuro em sequências aleatórias, fazendo você flutuar no banco (gravidade zero).",
-                ester: "Dá muito frio na barriga por causa da falta de peso na queda, segure bem firme nos apoios!",
-                gabriel: "Temática de hotel abandonado fantástica, a sensação de flutuar na queda é do caralho."
-            }
-        },
-        {
-            id: "h_rockn", park: "hollywood", name: "Rock 'n' Roller Coaster Aerosmith", express: true,
-            type: "🎸 Montanha-russa no escuro com lançamento disparado inicial.",
-            fear: { giu: 8, ester: 7, gabriel: 5 },
-            recommendation: {
-                giu: "O lançamento inicial de 0 a 92 km/h joga o estômago para trás. Tem inversões seguidas feitas na escuridão completa com rock tocando alto.",
-                ester: "A arrancada inicial assusta bastante, mas o percurso no escuro com os letreiros neon é incrível.",
-                gabriel: "Muito boa velocidade inicial, os alto-falantes colados na sua cabeça deixam a experiência eletrizante."
-            }
-        },
-        {
-            id: "h_slinky", park: "hollywood", name: "Slinky Dog Dash", express: true,
-            type: "🐶 Montanha-russa familiar lançada (Toy Story).",
-            fear: { giu: 5, ester: 4, gabriel: 2 },
-            recommendation: {
-                giu: "Tem um segundo lançamento no meio da pista e algumas corcovas que geram leves e deliciosos frios na barriga contínuos.",
-                ester: "Super gostosa e divertida de andar, dá sensação de velocidade moderada perfeita.",
-                gabriel: "Excelente visual do quintal do Toy Story lá de cima, trilho muito suave."
-            }
-        },
-        {
-            id: "h_rise", park: "hollywood", name: "Star Wars: Rise of the Resistance", express: true,
-            type: "🛰️ Dark Ride imersiva massiva com mini queda mecânica.",
-            fear: { giu: 3, ester: 2, gabriel: 1 },
-            recommendation: {
-                giu: "Os carrinhos andam sem trilho ágeis. Há um momento no final onde o carrinho entra em uma cápsula e há uma queda vertical real de 2 metros. Dá um susto!",
-                ester: "A queda é muito rápida e curta, dura um segundo e nem dá tempo de sofrer.",
-                gabriel: "A melhor e mais imersiva atração tecnológica do mundo. Você entra de verdade na história do filme."
-            }
-        },
-        {
-            id: "h_smugglers", park: "hollywood", name: "Millennium Falcon: Smugglers Run", express: true,
-            type: "🚀 Simulador de cabine interativo de pilotagem.",
-            fear: { giu: 3, ester: 3, gabriel: 1 },
-            recommendation: {
-                giu: "Se você for o piloto, a cabine reage aos seus comandos. Há simulações visuais de saltos no espaço que chacoalham, sem quedas físicas.",
-                ester: "Se você ficar nas posições de engenheiro ou atirador no fundo, chacoalha menos e dá menos tontura.",
-                gabriel: "A graça é ir de piloto para controlar o manche do salto para o hiperespaço."
-            }
-        },
-        {
-            id: "h_startours", park: "hollywood", name: "Star Tours – The Adventures Continue", express: true,
-            type: "🛸 Simulador de cabine fechada clássico em tela 3D.",
-            fear: { giu: 4, ester: 4, gabriel: 2 },
-            recommendation: {
-                giu: "A cabine inclina bastante acompanhando a projeção. Por ser antigo, as quedas virtuais na tela dão um frio na barriga visual forte.",
-                ester: "Esse simulador balança muito seco e costuma me dar um pouco de enjoo de movimento.",
-                gabriel: "As missões mudam de forma aleatória, então cada vez que você vai a história é diferente."
-            }
-        },
-        {
-            id: "h_mickeyrail", park: "hollywood", name: "Mickey & Minnie’s Runaway Railway", express: true,
-            type: "🚂 Passeio cênico em carrinhos sem trilhos e telas.",
-            fear: { giu: 2, ester: 1, gabriel: 0 },
-            recommendation: {
-                giu: "Super fofo. Os carrinhos simulam uma dança, além de uma cena de tornado onde balançam rápido, mas tudo controlado e sem nenhuma queda.",
-                ester: "Visual de desenho animado clássico lindo de ver, super dócil.",
-                gabriel: "A tecnologia de projeção nos cenários físicos é impecável."
-            }
-        },
-        {
-            id: "h_toymania", park: "hollywood", name: "Toy Story Mania!", express: true,
-            type: "🎯 Jogo de tiro 3D em carrinhos móveis.",
-            fear: { giu: 2, ester: 1, gabriel: 0 },
-            recommendation: {
-                giu: "Foco total em puxar a cordinha e atirar. Entre uma tela e outra, o carrinho gira muito rápido para mudar de sala, dando um tranco leve.",
-                ester: "Super viciante e sem risco de medo, ótimo para competir no placar do assento.",
-                gabriel: "Braço sai cansado de tanto puxar a cordinha do laser, muito divertido."
-            }
-        },
-        {
-            id: "h_saucers", park: "hollywood", name: "Alien Swirling Saucers", express: true,
-            type: "🛸 Carrinhos giratórios que deslizam em curvas rápidas.",
-            fear: { giu: 2, ester: 2, gabriel: 1 },
-            recommendation: {
-                giu: "O carrinho é puxado para as laterais fazendo curvas rápidas de chicote. Sem quedas, apenas força centrífuga lateral leve.",
-                ester: "Te esmaga um pouquinho contra quem está sentado do seu lado nas curvas, bem animado.",
-                gabriel: "Brinquedo de feira tradicional, mas com os bonecos de Toy Story."
-            }
-        },
-        {
-            id: "h_muppet", park: "hollywood", name: "Muppet*Vision 3D", express: true,
-            type: "🎭 Cinema 3D clássico com efeitos especiais físicos.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Sentar em poltronas fixas com óculos. Há bolhas de sabão e jatos de ar na sala, mas zero movimento físico.",
-                ester: "Ótimo ponto para fugir do sol e descansar na metade do dia no ar-condicionado.",
-                gabriel: "Atração antiga dos Muppets bem humorada clássica."
-            }
-        },
-        {
-            id: "h_mcqueen", park: "hollywood", name: "Lightning McQueen’s Racing Academy", express: false,
-            type: "🏎️ Show em tela gigante com animatrônico do Carros.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Show estático em sala fechada. Você senta em bancos e assiste ao Relâmpago McQueen gigante interagir com a tela.",
-                ester: "Totalmente tranquilo, focado nas crianças mas o boneco é perfeito.",
-                gabriel: "Curto e calmo, bom para preencher intervalos entre reservas de fura-filas."
-            }
-        },
-        {
-            id: "h_beauty", park: "hollywood", name: "Beauty and the Beast Live on Stage", express: true,
-            type: "🎭 Show musical em estilo Broadway ao vivo.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Teatro aberto coberto onde os atores cantam e dançam a história do filme. Lindo e livre de adrenalina.",
-                ester: "Os figurinos e as músicas clássicas ao vivo são emocionantes.",
-                gabriel: "Produção clássica muito boa para assistir sentado relaxando."
-            }
-        },
-        {
-            id: "h_indiana", park: "hollywood", name: "Indiana Jones Stunt Spectacular!", express: true,
-            type: "💥 Show de dublês de ação e explosões reais.",
-            fear: { giu: 1, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Explica os efeitos especiais dos filmes. Tem explosões de fogo que dão aquele susto pelo estrondo barulhento, mas assistido da arquibancada.",
-                ester: "Muito legal ver como os dublês fingem as lutas e as quedas de prédios.",
-                gabriel: "A cena clássica da pedra gigante correndo atrás dele é muito massa de ver ao vivo."
-            }
-        },
-        {
-            id: "h_presents", park: "hollywood", name: "Walt Disney Presents", express: false,
-            type: "🎨 Galeria de exposição de maquetes e museu de história.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Caminhada silenciosa por figurinos e esboços originais do Walt Disney, terminando em filme curto. Zero movimento.",
-                ester: "Dá para ver os rascunhos originais de como criaram os parques, super interessante.",
-                gabriel: "Exposição calma e vazia, ótima para fugir de finais longas."
-            }
-        },
-        {
-            id: "h_fantasmic", park: "hollywood", name: "Fantasmic!", express: true,
-            type: "🎆 Show noturno gigante de encerramento em anfiteatro.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Lutas de vilões, projeções na água e fogos. Um show épico para assistir sentado e fechar o dia com chave de ouro.",
-                ester: "O melhor show de encerramento da Disney, ver o barco cheio de personagens é mágico.",
-                gabriel: "Acomoda milhares de pessoas sentadas, mas chegue com antecedência para pegar o centro da arquibancada."
-            }
-        },
-
-        // ==================== ANIMAL KINGDOM ====================
-        {
-            id: "a_everest", park: "animal", name: "Expedition Everest", express: true,
-            type: "🏔️ Montanha-russa de alta velocidade com trecho longo de ré.",
-            fear: { giu: 8, ester: 7, gabriel: 4 },
-            recommendation: {
-                giu: "O trilho quebra e o trem despenca de ré no escuro fazendo curvas com muita força G. Depois, há uma queda para frente de 24 metros. Estômago vai na boca!",
-                ester: "O trecho de ré dá uma pressão forte na cabeça e bastante frio na barriga, segure firme!",
-                gabriel: "O visual da montanha nevada por fora é absurdo de lindo, percurso muito divertido."
-            }
-        },
-        {
-            id: "a_flight", park: "animal", name: "Avatar Flight of Passage", express: true,
-            type: "🍃 Simulador de voo imersivo 3D em estilo moto individual.",
-            fear: { giu: 5, ester: 4, gabriel: 2 },
-            recommendation: {
-                giu: "As simulações visuais de mergulhos entre montanhas na tela gigante dão um frio na barriga visual bem realista, mas o banco físico não cai.",
-                ester: "Dá bastante vertigem visual de altura porque a tela te cerca por completo, mas é incrivelmente linda.",
-                gabriel: "O simulador aperta as suas pernas imitando o dragão respirando embaixo de você, imersão nota 10."
-            }
-        },
-        {
-            id: "a_dinosaur", park: "animal", name: "DINOSAUR", express: true,
-            type: "🦖 Dark Ride intensa a bordo de um jipe militar acidentado.",
-            fear: { giu: 5, ester: 4, gabriel: 2 },
-            recommendation: {
-                giu: "O jipe chacoalha muito violentamente e faz curvas secas no escuro enquanto dinossauros rugem na sua cara. Frio na barriga vem muito do susto.",
-                ester: "Muito escuro, barulhento e trança o corpo todo no banco. Dá bastante sustos inesperados.",
-                gabriel: "Movimentação brusca bem legal estilo Indiana Jones da Califórnia."
-            }
-        },
-        {
-            id: "a_kali", park: "animal", name: "Kali River Rapids", express: true,
-            type: "🌊 Boia redonda de corredeira de água com queda inclinada.",
-            fear: { giu: 4, ester: 3, gabriel: 2 },
-            recommendation: {
-                giu: "O ponto alto de frio na barriga é uma queda inclinada de 6 metros onde a boia desce rodando livre. Dá um vazio rápido e molha.",
-                ester: "Dependendo de como a boia rodar na descida, quem estiver de costas toma uma onda gigante nas costas e ensopa.",
-                gabriel: "Passeio de água curto, legal para refrescar nos dias quentes."
-            }
-        },
-        {
-            id: "a_naviriver", park: "animal", name: "Na'vi River Journey", express: true,
-            type: "🛶 Passeio de barco lento e contemplativo por Pandora.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Passeio de barco indoor iluminado por plantas bioluminescentes artificiais. Lindo e totalmente sem quedas.",
-                ester: "O animatrônico da xamã azul no final é o robô mais perfeito que a Disney já fez, se movimenta como um humano real.",
-                gabriel: "Totalmente visual e calmo, bom para despressurizar da adrenalina."
-            }
-        },
-        {
-            id: "a_safari", park: "animal", name: "Kilimanjaro Safaris", express: true,
-            type: "🦁 Tour de safári em caminhão por reserva real de animais.",
-            fear: { giu: 1, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Você anda por caminhos vendo leões e elefantes soltos de verdade. O caminhão dá solavancos na terra esburacada, mas super tranquilo.",
-                ester: "Lindo de morrer, parece que você viajou para a África de verdade. Vá de manhã para ver os animais mais ativos.",
-                gabriel: "Passeio longo de quase 20 minutos focado na natureza real."
-            }
-        },
-        {
-            id: "a_bug", park: "animal", name: "It’s Tough to be a Bug!", express: true,
-            type: "🐛 Cinema 4D interativo localizado dentro da árvore central.",
-            fear: { giu: 2, ester: 2, gabriel: 1 },
-            recommendation: {
-                giu: "Filme do Vida de Inseto. Pode dar nervoso porque o banco simula baratas andando nas suas costas e picadas leves de abelha.",
-                ester: "Crianças costumam chorar com o efeito dos insetos saindo da tela, dá aquele nervoso de cócegas inesperado.",
-                gabriel: "Efeitos sensoriais engraçados e sala escondida dentro das raízes da árvore."
-            }
-        },
-        {
-            id: "a_triceratop", park: "animal", name: "TriceraTop Spin", express: false,
-            type: "🦕 Atração giratória infantil de dinossauros voadores.",
-            fear: { giu: 1, ester: 1, gabriel: 0 },
-            recommendation: {
-                giu: "Brinquedo infantil que gira em círculos estilo o Dumbo do Magic Kingdom. Super leve e dócil.",
-                ester: "Sem nenhuma adrenalina física, puramente para crianças pequenas.",
-                gabriel: "Fila costuma ser zerada, brinquedo de feira tradicional."
-            }
-        },
-        {
-            id: "a_lionking", park: "animal", name: "Festival of the Lion King", express: true,
-            type: "🎭 Show musical em arena circular com acrobatas ao vivo.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Você assiste sentado acrobatas dando piruetas no ar e cantores performando o Rei Leão. Zero impacto físico em você.",
-                ester: "O melhor show de teatro de toda a Disney. Cantores impecáveis, emocionante de chorar.",
-                gabriel: "Muito bem produzido, arquibancada coberta muito confortável."
-            }
-        },
-        {
-            id: "a_nemo", park: "animal", name: "Finding Nemo: The Big Blue... and Beyond!", express: true,
-            type: "🎭 Show musical teatral com marionetes gigantes iluminadas.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Adaptação da história do Nemo com cantores incríveis controlando bonecos grandes. Super relaxante no ar-condicionado.",
-                ester: "Lindo visual, as poltronas do teatro são ótimas para descansar após andar o parque.",
-                gabriel: "Musical bem construído com músicas originais ótimas."
-            }
-        },
-        {
-            id: "a_gorillatrail", park: "animal", name: "Gorilla Falls Exploration Trail", express: false,
-            type: "🦍 Trilha de caminhada para observação de gorilas.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Você caminha no seu próprio ritmo por caminhos na mata observando gorilas e hipopótamos. Totalmente calmo.",
-                ester: "Caminhada relaxante arborizada, excelente para fazer após sair do Safári.",
-                gabriel: "Zoológico aberto tradicional integrado à mata do parque."
-            }
-        },
-        {
-            id: "a_tigertrail", park: "animal", name: "Maharajah Jungle Trek", express: false,
-            type: "🐯 Trilha de caminhada em ruínas asiáticas com tigres.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Caminhada tranquila por cenários incríveis imitando templos desabados da Índia para ver tigres e morcegos imensos.",
-                ester: "Os cenários de ruínas dão ótimas fotos de recordação, passeio muito bonito.",
-                gabriel: "Trilha silenciosa e muito bem tematizada."
-            }
-        },
-        {
-            id: "a_train", park: "animal", name: "Wildlife Express Train", express: false,
-            type: "🚂 Trem de ferro rústico para a área de conservação.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Um passeio curto e lento de trem que te transporta até a área de carinho em animais de fazenda.",
-                ester: "Movimento calmo tradicional de maria fumaça de fazenda.",
-                gabriel: "Único meio de transporte para acessar a ilha de preservação do Rafiki."
-            }
-        },
-        {
-            id: "a_petting", park: "animal", name: "Affection Section", express: false,
-            type: "🐐 Área de fazendinha interativa com cabras e bodes.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Você entra em um cercado limpo para passar a mão e escovar bodes domésticos. Totalmente calmo.",
-                ester: "Super fofinho para interagir com os animais bem mansos.",
-                gabriel: "Atração relaxante para quebrar o ritmo puxado das filas."
-            }
-        },
-        {
-            id: "a_animation", park: "animal", name: "The Animation Experience", express: true,
-            type: "✏️ Aula ao vivo ensinando a desenhar personagens da Disney.",
-            fear: { giu: 0, ester: 0, gabriel: 0 },
-            recommendation: {
-                giu: "Você senta em bancadas com papel e segue os passos do desenhista oficial para rascunhar um personagem. Muito legal.",
-                ester: "Uma delícia de atividade criativa no ar-condicionado, e você leva o seu desenho para casa.",
-                gabriel: "Super fácil de acompanhar mesmo para quem diz que não sabe desenhar nada."
+                ester: "A queda final dá bastante frio na barriga e espirra bastante água na frente.",
+                gabriel: "Visual reformulado lindo, vale muito a pena conferir."
             }
         }
     ]
