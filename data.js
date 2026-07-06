@@ -14,16 +14,15 @@ const appData = {
         { id: "animal", name: "🌳 Animal Kingdom" }
     ],
     itinerary: [
-        { "date": "10/09", "title": "Chegada em Orlando ✈️" },
-        { "date": "11/09", "title": "🦁 Disney's Animal Kingdom" },
-        { "date": "12/09", "title": "🎬 Universal Studios + 🧙 Islands of Adventure" },
-        { "date": "13/09", "title": "🌌 Universal Epic Universe" },
-        { "date": "14/09", "title": "🚢 Cruzeiro Disney (Embarque)" },
-        { "date": "18/09", "title": "🏰 Magic Kingdom" },
-        { "date": "19/09", "title": "🛍️ Outlet / Disney Springs & Voo de Retorno" }
+        { date: "10/09", title: "Chegada em Orlando ✈️" },
+        { date: "11/09", title: "🦁 Disney's Animal Kingdom" },
+        { date: "12/09", title: "🎬 Universal Studios + 🧙 Islands of Adventure" },
+        { date: "13/09", title: "🌌 Universal Epic Universe" },
+        { date: "14/09", title: "🚢 Cruzeiro Disney (Embarque)" },
+        { date: "18/09", title: "🏰 Magic Kingdom" },
+        { date: "19/09", title: "🛍️ Outlet / Disney Springs & Voo de Retorno" }
     ],
     attractions: [
-        // ==================== UNIVERSAL STUDIOS ====================
         {
             id: "u_rockit", park: "universal", name: "Hollywood Rip Ride Rockit", express: true,
             type: "🎢 Montanha-russa de alta velocidade com subida vertical de 90°.",
@@ -36,7 +35,7 @@ const appData = {
         },
         {
             id: "u_mummy", park: "universal", name: "Revenge of the Mummy", express: true,
-            type: "🧟 Montanha-russa no escuro com lançamentos rápidos.",
+            type: "=== Montanha-russa no escuro com lançamentos rápidos.",
             fear: { giu: 6, ester: 4, gabriel: 2 },
             recommendation: {
                 giu: "Tem um lançamento inicial forte e um trecho curto de ré que dão aquele frio na barriga rápido, mas passageiro.",
@@ -46,7 +45,7 @@ const appData = {
         },
         {
             id: "u_gringotts", park: "universal", name: "Harry Potter & Escape from Gringotts", express: true,
-            type: "🧙‍♂️ Simulador 3D híbrido com trilhos.",
+            type: "=== Simulador 3D híbrido com trilhos.",
             fear: { giu: 4, ester: 3, gabriel: 1 },
             recommendation: {
                 giu: "Uma pequena queda com chacoalhão bem no começo dá um leve frio na barriga, mas o resto é puramente projeção 3D.",
@@ -56,7 +55,7 @@ const appData = {
         },
         {
             id: "u_simpsons", park: "universal", name: "The Simpsons Ride", express: true,
-            type: "🍩 Simulador de movimento com tela gigante côncava.",
+            type: "=== Simulador de movimento com tela gigante côncava.",
             fear: { giu: 5, ester: 5, gabriel: 2 },
             recommendation: {
                 giu: "A tela engana muito o cérebro simulando quedas livres bizarras. Dá sensação visual de frio na barriga e tontura.",
@@ -66,7 +65,7 @@ const appData = {
         },
         {
             id: "u_minions", park: "universal", name: "Despicable Me Minion Mayhem", express: true,
-            type: "🍌 Simulador de base móvel 3D.",
+            type: "=== Simulador de base móvel 3D.",
             fear: { giu: 3, ester: 3, gabriel: 1 },
             recommendation: {
                 giu: "Movimentos mais suaves. Tem uma queda virtual logo no início, mas o estômago quase não sente o impacto físico.",
@@ -76,7 +75,7 @@ const appData = {
         },
         {
             id: "u_transformers", park: "universal", name: "TRANSFORMERS: The Ride-3D", express: true,
-            type: "🤖 Simulador em trilhos com movimentos rápidos.",
+            type: "=== Simulador em trilhos com movimentos rápidos.",
             fear: { giu: 3, ester: 2, gabriel: 1 },
             recommendation: {
                 giu: "O carrinho gira rápido entre as telas. Há simulações de queda de prédios, mas o frio na barriga físico é mínimo.",
@@ -86,7 +85,7 @@ const appData = {
         },
         {
             id: "u_fallon", park: "universal", name: "Race Through New York Starring Jimmy Fallon", express: true,
-            type: "🗽 Simulador de teatro voador (estilo cinema).",
+            type: "=== Simulador de teatro voador (estilo cinema).",
             fear: { giu: 2, ester: 2, gabriel: 1 },
             recommendation: {
                 giu: "É uma poltrona de cinema grande que se mexe unida. Simula uma corrida com saltos virtuais bem tranquilos.",
@@ -96,7 +95,7 @@ const appData = {
         },
         {
             id: "u_fast", park: "universal", name: "Fast & Furious - Supercharged", express: true,
-            type: "🚘 Simulador imersivo dentro de um ônibus.",
+            type: "=== Simulador imersivo dentro de um ônibus.",
             fear: { giu: 1, ester: 1, gabriel: 1 },
             recommendation: {
                 giu: "O ônibus apenas treme e finge velocidade usando as telas ao redor. Zero frio na barriga.",
@@ -106,7 +105,7 @@ const appData = {
         },
         {
             id: "u_mib", park: "universal", name: "MEN IN BLACK Alien Attack", express: true,
-            type: "🔫 Carrinho de tiro com giros intensos.",
+            type: "=== Carrinho de tiro com giros intensos.",
             fear: { giu: 2, ester: 2, gabriel: 1 },
             recommendation: {
                 giu: "Sem quedas. O único momento de surpresa são os giros rápidos em 360° que o carrinho dá se for atingido.",
@@ -116,7 +115,7 @@ const appData = {
         },
         {
             id: "u_et", park: "universal", name: "E.T. Adventure", express: true,
-            type: "🚲 Atração escura clássica (bicicletas suspensas).",
+            type: "=== Atração escura clássica (bicicletas suspensas).",
             fear: { giu: 1, ester: 1, gabriel: 0 },
             recommendation: {
                 giu: "Nostálgico, lento e relaxante. As bicicletas flutuam suavemente pelo cenário. Zero frio na barriga.",
@@ -126,7 +125,7 @@ const appData = {
         },
         {
             id: "u_minionblast", park: "universal", name: "Villain-Con Minion Blast", express: true,
-            type: "🎯 Atração de tiro em esteira rolante (de pé).",
+            type: "=== Atração de tiro em esteira rolante (de pé).",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
                 giu: "Você fica de pé em uma esteira andando devagar segurando uma arma laser. Absolutamente nenhum movimento físico.",
@@ -136,17 +135,17 @@ const appData = {
         },
         {
             id: "u_express", park: "universal", name: "Hogwarts Express", express: true,
-            type: "🚂 Trem temático que conecta os dois parques.",
+            type: "=== Trem temático que conecta os dois parques.",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
-                giu: "Um train real e calmo. A graça está nas telas das janelas mostrando os personagens.",
+                giu: "Um trem real e calmo. A graça está nas telas das janelas mostrando os personagens.",
                 ester: "Super relaxante e útil para trocar de parque sem andar.",
                 gabriel: "A imersão da cabine é perfeita para os fãs."
             }
         },
         {
             id: "u_animals", park: "universal", name: "Animal Actors on Location!", express: true,
-            type: "🐾 Show ao vivo com animais adestrados.",
+            type: "=== Show ao vivo com animais adestrados.",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
                 giu: "Sentar no anfiteatro e assistir a cachorros e pássaros fazendo truques. Ritmo totalmente relaxado.",
@@ -156,7 +155,7 @@ const appData = {
         },
         {
             id: "u_bourne", park: "universal", name: "The Bourne Stuntacular", express: true,
-            type: "💥 Show de dublês de ação com efeitos especiais.",
+            type: "=== Show de dublês de ação com efeitos especiais.",
             fear: { giu: 1, ester: 1, gabriel: 0 },
             recommendation: {
                 giu: "Você assiste sentado no teatro. Dá aquele susto leve com rajadas de vento e calor das explosões, mas sem impacto físico.",
@@ -166,7 +165,7 @@ const appData = {
         },
         {
             id: "u_makeup", park: "universal", name: "Universal Orlando's Horror Make-Up Show", express: true,
-            type: "🎭 Show de comédia e efeitos de maquiagem de terror.",
+            type: "=== Show de comédia e efeitos de maquiagem de terror.",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
                 giu: "Um show de teatro muito engraçado explicando os bastidores de filmes de monstros. Sem sustos pesados.",
@@ -174,8 +173,6 @@ const appData = {
                 gabriel: "Muito engraçado e interativo com a plateia."
             }
         },
-
-        // ==================== EPIC UNIVERSE ====================
         {
             id: "e_racers", park: "epic", name: "Stardust Racers", express: true,
             type: "🚀 Montanha-russa de duelo de alta velocidade (lançamento duplo).",
@@ -188,7 +185,7 @@ const appData = {
         },
         {
             id: "e_dk", park: "epic", name: "Mine-Cart Madness (Donkey Kong)", express: true,
-            type: "🍌 Montanha-russa de projeção com effect de 'salto' sobre trilhos.",
+            type: "🍌 Montanha-russa de projeção com efeito de 'salto' sobre trilhos.",
             fear: { giu: 6, ester: 5, gabriel: 3 },
             recommendation: {
                 giu: "O carrinho parece pular buracos no trilho. Dá pequenos frios na barriga pela surpresa visual, mas não tem quedas colossais.",
@@ -308,7 +305,7 @@ const appData = {
         },
         {
             id: "e_untrainable", park: "epic", name: "The Untrainable Dragon", express: true,
-            type: "🎭 Show musical ao vivo com dragões gigantes voando.",
+            type: "🎭 Show musical ao vivo com dragões giants voando.",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
                 giu: "É lindo, focado na história e nas músicas dos filmes de dragão. Sem sustos ou impactos na plateia.",
@@ -326,8 +323,6 @@ const appData = {
                 gabriel: "Melhor jeito de encerrar o dia de parque com chave de ouro."
             }
         },
-
-        // ==================== ISLANDS OF ADVENTURE ====================
         {
             id: "i_velocicoaster", park: "islands", name: "Jurassic World VelociCoaster", express: true,
             type: "🦖 Montanha-russa de lançamento duplo de extrema velocidade com inversões.",
@@ -359,90 +354,34 @@ const appData = {
             }
         },
         {
-            id: "i_doom", park: "islands", name: "Doctor Doom's Fearfall", express: true,
-            type: "🚀 Torre de lançamento vertical explosivo.",
-            fear: { giu: 9, ester: 7, gabriel: 5 },
-            recommendation: {
-                giu: "Te dispara para cima em altíssima velocidade. O maior frio na barriga acontece no milissegundo em que você chega no topo e flutua antes de descer.",
-                ester: "A subida é rápida demais, o susto dura poucos segundos e logo acaba.",
-                gabriel: "Dá uma vista linda do parque por cima, o disparo inicial é a única parte forte."
-            }
-        },
-        {
-            id: "i_dudley", park: "islands", name: "Dudley Do-Right's Ripsaw Falls", express: true,
-            type: "🛶 Barco na água com queda livre gigante e íngreme.",
-            fear: { giu: 7, ester: 6, gabriel: 4 },
-            recommendation: {
-                giu: "A queda final é incrivelmente alta e íngreme, dando um frio na barriga digno de montanha-russa grande. Você vai sair encharcada.",
-                ester: "Dá muito frio na barriga na descida final, e a água entra com força no barco.",
-                gabriel: "Divertida e refrescante, prepare-se para trocar de meia depois."
-            }
-        },
-        {
-            id: "i_jpriver", park: "islands", name: "Jurassic Park River Adventure", express: true,
-            type: "🦖 Passeio de barco que termina em queda de 26m no escuro.",
+            id: "m_space", park: "magic", name: "Space Mountain", express: true,
+            type: "🚀 Montanha-russa clássica totalmente no escuro.",
             fear: { giu: 6, ester: 5, gabriel: 3 },
             recommendation: {
-                giu: "O passeio inteiro é um tour calmo vendo dinossauros. Porém, os últimos 15 segundos compensam com uma queda livre grande no escuro.",
-                ester: "O visual inicial é lindo, e a queda final dá aquele frio na barriga rápido que logo passa.",
-                gabriel: "Um clássico obrigatório. O T-Rex animatrônico no topo antes da queda é animal."
+                giu: "Ela não é rápida nem tem quedas gigantes, mas o fato de ser no breu total faz com que você não veja nada chegando. Fator surpresa total.",
+                ester: "O carrinho é de assento individual em fila, balança bastante e o escuro assusta um pouco.",
+                gabriel: "Clássico retrô espacial, os trancos nos trilhos antigos são fortes."
             }
         },
         {
-            id: "i_popeye", park: "islands", name: "Popeye & Bluto's Bilge-Rat Barges", express: true,
-            type: "🌊 Boia redonda gigante corredeira abaixo.",
-            fear: { giu: 3, ester: 3, gabriel: 1 },
+            id: "m_tron", park: "magic", name: "TRON Lightcycle / Run", express: true,
+            type: "🏍️ Montanha-russa de lançamento em alta velocidade.",
+            fear: { giu: 6, ester: 4, gabriel: 2 },
             recommendation: {
-                giu: "Quase não há sensação de queda, o frio na barriga vem apenas de pequenos solavancos na água. Mas a lavagem é completa: impossível sair seco.",
-                ester: "Você vai sair ensopada como se tivesse entrado em uma piscina de roupa, vá com capa ou trocas.",
-                gabriel: "Brinquedo de água que mais molha em toda Orlando, garantia de risadas com o grupo."
+                giu: "O arranque inicial para a área externa dá um frio na barriga ótimo, mas depois ela flui muito suave, sem quedas verticais pesadas.",
+                ester: "A posição de ir montada na moto é super diferente e confortável. Uma delícia de velocidade.",
+                gabriel: "Visual futurista incrível, mas a pista é um pouco curta, acaba rápido."
             }
         },
         {
-            id: "i_forbidden", park: "islands", name: "Harry Potter and the Forbidden Journey", express: true,
-            type: "🏰 Simulador de braço robótico em trilhos dentro do castelo.",
-            fear: { giu: 5, ester: 4, gabriel: 2 },
+            id: "m_tiana", park: "magic", name: "Tiana's Bayou Adventure", express: true,
+            type: "🛶 Passeio de barco na água com uma queda livre grande.",
+            fear: { giu: 7, ester: 6, gabriel: 4 },
             recommendation: {
-                giu: "A tecnologia da garra mecânica te inclina para trás e para os lados dando sensação física de voo forte. Pode dar um pouquinho de enjoo.",
-                ester: "Os movimentos combinados com a tela me deixam um pouco zonza, mas a fila dentro do castelo compensa tudo.",
-                gabriel: "Muito boa imersão, o efeito dos Dementadores reais perto do carrinho é ótimo."
+                giu: "O passeio inteiro é calmo e musical, mas termina com uma queda livre clássica de 15 metros. Dá aquele vazio no estômago clássico.",
+                ester: "A queda final dá bastante frio na barriga e espirra bastante água na frente.",
+                gabriel: "Visual reformulado lindo, vale muito a pena conferir."
             }
-        },
-        {
-            id: "i_spiderman", park: "islands", name: "The Amazing Adventures of Spider-Man", express: true,
-            type: "🕷️ Simulador 3D em trilhos com movimentos rápidos.",
-            fear: { giu: 4, ester: 3, gabriel: 1 },
-            recommendation: {
-                giu: "Há uma simulação clássica de queda livre do topo de um prédio que engana muito bem os olhos e dá um leve frio na barriga visual.",
-                ester: "Muito divertida e sem quedas físicas reais pesadas, super segura.",
-                gabriel: "Apesar de antiga, a transição entre telas físicas e virtuais continua impecável."
-            }
-        },
-        {
-            id: "i_kong", park: "islands", name: "Skull Island: Reign of Kong", express: true,
-            type: "🦍 Simulador imersivo a bordo de um grande caminhão.",
-            fear: { giu: 2, ester: 2, gabriel: 1 },
-            recommendation: {
-                giu: "O caminhão chacoalha enquanto você assiste a batalhas em telas gigantes. Mais focado no visual e em alguns sustos do que em quedas.",
-                ester: "Ambiente escuro e barulhento de selva, mas o jipe se move devagar.",
-                gabriel: "O animatrônico final do King Kong de tamanho real impressiona bastante."
-            }
-        },
-        {
-            id: "i_hippogriff", park: "islands", name: "Flight of the Hippogriff", express: true,
-            type: "🦅 Montanha-russa familiar curta (estilo infantil).",
-            fear: { giu: 3, ester: 2, gabriel: 1 },
-            recommendation: {
-                giu: "Uma montanha-russa bem leve, excelente para aquecimento. As curvas e descidas são suaves.",
-                ester: "Dá para ir com as mãos para cima curtindo a vista da cabana do Hagrid.",
-                gabriel: "Muito curta, dura menos de um minuto na pista."
-            }
-        },
-        {
-            id: "i_pteranodon", park: "islands", name: "Pteranodon Flyers", express: false,
-            type: "🦕 Cadeiras suspensas que voam suavemente sobre a ilha.",
-            fear: { giu: 2, ester: 1, gabriel: 0 },
-            recommendation: {
-                giu: "Voo lento nas alturas. Não tem quedas ou acelerações. Nota: adultos só sobem se estiverem acompanhando uma criança.",
-                ester: "Passeio calmo para ver a floresta artificial de cima.",
-                gabriel: "Atração restrita para quem via
+        }
+    ]
+};
