@@ -1,159 +1,169 @@
-// Estado inicial da aplicação
 let currentProfile = "giu";
 let currentPark = "home";
 
-const app = document.getElementById("app");
-const navbar = document.getElementById("navbar");
+// Carrega as atrações já visitadas salvas no navegador
+let visitedAttractions = JSON.parse(localStorage.getItem('visited_attractions')) || [];
 
-// Inicializa o app
-init();
+document.addEventListener("DOMContentLoaded", () => {
+    initProfiles();
+    initNav();
+    render();
+});
 
-function init() {
-    renderNavbar();
-    renderPage();
+function initProfiles() {
+    const selector = document.getElementById("profile-selector");
+    if (!selector) return;
+    
+    selector.innerHTML = appData.profiles.map(p => 
+        `<button class="profile-btn ${p.id === currentProfile ? 'active' : ''}" data-id="${p.id}">${p.name}</button>`
+    ).join("");
+
+    selector.addEventListener("click", (e) => {
+        if (e.target.classList.contains("profile-btn")) {
+            document.querySelectorAll(".profile-btn").forEach(b => b.classList.remove("active"));
+            e.target.classList.add("active");
+            currentProfile = e.target.dataset.id;
+            render();
+        }
+    });
 }
 
-function renderNavbar() {
-    navbar.innerHTML = "";
+function initNav() {
+    const nav = document.getElementById("park-nav");
+    if (!nav) return;
 
-    // 1. Criação do Bloco de Seleção de Perfis
-    const profileContainer = document.createElement("div");
-    profileContainer.className = "profile-selector";
+    nav.innerHTML = appData.parks.map(p => 
+        `<button class="nav-btn ${p.id === currentPark ? 'active' : ''}" data-id="${p.id}">${p.name}</button>`
+    ).join("");
 
-    appData.profiles.forEach(profile => {
-        const btn = document.createElement("button");
-        btn.innerText = profile.name;
-
-        // Aplica a cor dinâmica baseada no perfil ativo
-        if (profile.id === currentProfile) {
-            btn.classList.add("active");
-            if (currentProfile === "giu") btn.style.backgroundColor = "#8B5CF6";     // Roxo
-            if (currentProfile === "ester") btn.style.backgroundColor = "#3B82F6";   // Azul
-            if (currentProfile === "gabriel") btn.style.backgroundColor = "#EF4444"; // Vermelho
+    nav.addEventListener("click", (e) => {
+        if (e.target.classList.contains("nav-btn")) {
+            document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
+            e.target.classList.add("active");
+            currentPark = e.target.dataset.id;
+            render();
         }
-
-        btn.onclick = () => {
-            currentProfile = profile.id;
-            renderNavbar();
-            renderPage();
-        };
-        profileContainer.appendChild(btn);
     });
-    navbar.appendChild(profileContainer);
-
-    // 2. Criação do Bloco de Seleção de Parques
-    const parkContainer = document.createElement("div");
-    parkContainer.className = "park-selector";
-
-    appData.parks.forEach(park => {
-        const btn = document.createElement("button");
-        btn.innerText = park.name;
-
-        if (park.id === currentPark) {
-            btn.classList.add("active");
-        }
-
-        btn.onclick = () => {
-            currentPark = park.id;
-            renderNavbar();
-            renderPage();
-        };
-        parkContainer.appendChild(btn);
-    });
-    navbar.appendChild(parkContainer);
 }
 
-function renderPage() {
+// Controla o clique do checkbox de "Já Fui!"
+function toggleVisited(attractionId) {
+    if (visitedAttractions.includes(attractionId)) {
+        visitedAttractions = visitedAttractions.filter(id => id !== attractionId);
+    } else {
+        visitedAttractions.push(attractionId);
+    }
+    localStorage.setItem('visited_attractions', JSON.stringify(visitedAttractions));
+    render(); // Recarrega a tela para atualizar o estilo do card
+}
+
+function render() {
+    const container = document.getElementById("content-container");
+    if (!container) return;
+
     if (currentPark === "home") {
-        renderHome();
+        renderHome(container);
     } else {
-        renderPark(currentPark);
+        renderPark(container);
     }
 }
 
-function renderHome() {
-    app.innerHTML = `
-        <div class="card">
-            <h2>🇺🇸 Roteiro da Viagem</h2>
-            <div style="margin-top: 12px;">
-                ${appData.itinerary.map(day => `
-                    <div style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #334155;">
-                        <span style="color: #0ea5e9; font-weight: bold; font-size: 14px;">${day.date}</span>
-                        <p style="color: #fff; font-size: 16px; margin-top: 2px;">${day.park}</p>
-                    </div>
-                `).join("")}
+function renderHome(container) {
+    let html = `
+        <div class="welcome-card">
+            <h2>Bem-vindo ao Guia de Frio na Barriga! 🎢🎒</h2>
+            <p>Selecione seu usuário no topo para ver as notas e dicas personalizadas de acordo com o estômago de cada um, ou navegue pelos parques no menu lateral.</p>
+        </div>
+        <h3 style="margin-top: 30px; margin-bottom: 15px; color: #fff;">🗓️ Nosso Roteiro de Parques</h3>
+        <div style="display: grid; gap: 12px;">
+    `;
+
+    appData.itinerary.forEach(item => {
+        html += `
+            <div style="background: #1e293b; padding: 16px; border-radius: 8px; border-left: 4px solid #6366f1; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: bold; color: #94a3b8; font-size: 14px;">${item.date}</span>
+                <span style="color: #f1f5f9; font-weight: 500;">${item.park}</span>
             </div>
-        </div>
-    `;
+        `;
+    });
+
+    html += `</div>`;
+    container.innerHTML = html;
 }
 
-function renderPark(parkId) {
-    const park = appData.parks.find(p => p.id === parkId);
-    const attractions = appData.attractions.filter(a => a.park === parkId);
-    const profileName = appData.profiles.find(p => p.id === currentProfile).name;
+function renderPark(container) {
+    const filtered = appData.attractions.filter(a => a.park === currentPark);
+    const parkName = appData.parks.find(p => p.id === currentPark).name;
 
-    let attractionsHTML = "";
-    if (attractions.length === 0) {
-        attractionsHTML = `<div class="card"><p>Nenhuma atração cadastrada para este parque ainda. 🎢</p></div>`;
-    } else {
-        attractionsHTML = attractions.map(renderAttraction).join("");
+    if (filtered.length === 0) {
+        container.innerHTML = `<h2>${parkName}</h2><p style="color: #94a3b8;">Nenhuma atração listada para este parque.</p>`;
+        return;
     }
 
-    app.innerHTML = `
-        <div class="card" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-left: 4px solid #0ea5e9;">
-            <h2>${park.name}</h2>
-            <p>Visualizando notas de: <strong style="color: #fff;">${profileName}</strong></p>
-        </div>
-        ${attractionsHTML}
-    `;
+    // Ordena colocando as que dão mais frio na barriga no topo
+    filtered.sort((a, b) => b.fear[currentProfile] - a.fear[currentProfile]);
+
+    let html = `<h2 style="margin-bottom: 20px; color: #fff;">${parkName} (${filtered.length} atrações)</h2>`;
+    html += `<div style="display: grid; gap: 20px;">`;
+    
+    filtered.forEach(a => {
+        html += renderAttraction(a);
+    });
+
+    html += `</div>`;
+    container.innerHTML = html;
 }
 
 function renderAttraction(attraction) {
     const fear = attraction.fear[currentProfile];
     const recommendation = attraction.recommendation[currentProfile];
+    const isVisited = visitedAttractions.includes(attraction.id);
     
-    // Define a cor da barra e bordas baseado no usuário ativo
     let color = "#60a5fa";
     if (currentProfile === "giu") color = "#8B5CF6";
     if (currentProfile === "ester") color = "#3B82F6";
     if (currentProfile === "gabriel") color = "#EF4444";
 
     return `
-        <div class="card" style="padding: 0; overflow: hidden; margin-bottom: 20px;">
-            <!-- Imagem Temática da Atração -->
-            ${attraction.image ? `
-                <div style="width: 100%; height: 160px; overflow: hidden; position: relative;">
-                    <img src="${attraction.image}" alt="${attraction.name}" style="width: 100%; height: 100%; object-fit: cover;">
-                    <span style="position: absolute; top: 12px; right: 12px; font-size: 11px; padding: 4px 8px; border-radius: 12px; background: ${attraction.express ? '#065f46' : '#991b1b'}; color: #fff; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.4);">
-                        ${attraction.express ? '⚡ Fast/Express' : '❌ Fila Normal'}
-                    </span>
-                </div>
-            ` : ''}
+        <div class="card" style="padding: 18px; margin-bottom: 0; position: relative; border-radius: 12px; transition: all 0.3s ease; ${isVisited ? 'opacity: 0.45; background: #0f172a; border: 1px dashed #334155;' : ''}">
             
-            <!-- Corpo das Informações -->
-            <div style="padding: 16px;">
-                <h3 style="font-size: 18px; margin-bottom: 4px; color: #fff;">${attraction.name}</h3>
+            <!-- Linha do Topo: Nome e Tags -->
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 8px;">
+                <div>
+                    <h3 style="font-size: 18px; margin: 0 0 4px 0; color: #fff; ${isVisited ? 'text-decoration: line-through; color: #64748b;' : ''}">${attraction.name}</h3>
+                    <p style="color: #cbd5e1; font-size: 13px; margin: 0; line-height: 1.4;">${attraction.type}</p>
+                </div>
                 
-                <!-- Tipo de Atração -->
-                <p style="color: #cbd5e1; font-size: 13px; margin-bottom: 14px; font-style: normal; line-height: 1.4;">
-                    ${attraction.type}
+                <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+                    <!-- Tag Fura-Fila -->
+                    <span style="font-size: 11px; padding: 4px 8px; border-radius: 12px; background: ${attraction.express ? 'rgba(6,95,70,0.4)' : 'rgba(153,27,27,0.4)'}; color: ${attraction.express ? '#34d399' : '#f87171'}; border: 1px solid ${attraction.express ? '#065f46' : '#991b1b'}; font-weight: 600;">
+                        ${attraction.express ? '⚡ Express/LL' : '⏱️ Normal'}
+                    </span>
+                    
+                    <!-- Checkbox Já Fui -->
+                    <label style="display: flex; align-items: center; gap: 6px; background: #1e293b; padding: 4px 10px; border-radius: 12px; border: 1px solid #334155; cursor: pointer; font-size: 12px; color: #e2e8f0; user-select: none;">
+                        <input type="checkbox" ${isVisited ? 'checked' : ''} onchange="toggleVisited('${attraction.id}')" style="cursor: pointer; accent-color: ${color}; transform: scale(1.1);">
+                        <span>${isVisited ? '✅ Fui!' : 'Já fui?'}</span>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Medidor de Frio na Barriga -->
+            <div style="margin-top: 14px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                    <p style="font-size: 13px; color: #94a3b8; margin: 0;">😰 Intensidade:</p>
+                    <strong style="color: #fff; font-size: 14px;">${fear} / 10</strong>
+                </div>
+                <div style="height: 6px; background: #334155; border-radius: 3px; overflow: hidden;">
+                    <div style="height: 100%; background: ${color}; width: ${fear * 10}%; transition: width 0.3s ease;"></div>
+                </div>
+            </div>
+            
+            <!-- Comentário do usuário -->
+            <div style="background: rgba(255,255,255,0.01); padding: 12px; border-radius: 8px; border-left: 3px solid ${color}; margin-top: 14px;">
+                <p style="color: #cbd5e1; font-style: italic; font-size: 13px; margin: 0; line-height: 1.5;">
+                    "${recommendation}"
                 </p>
-                
-                <!-- Medidor de Frio na Barriga -->
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                    <p style="font-size: 14px; color: #94a3b8; margin: 0;">😰 Frio na barriga:</p>
-                    <strong style="color: #fff; font-size: 15px;">${fear} / 10</strong>
-                </div>
-                <div style="height: 8px; background: #334155; border-radius: 4px; margin-bottom: 16px; overflow: hidden;">
-                    <div style="height: 100%; background: ${color}; width: ${fear * 10}%; transition: width 0.4s ease-out;"></div>
-                </div>
-                
-                <!-- Comentário / Dica Customizada -->
-                <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; border-left: 3px solid ${color};">
-                    <p style="color: #e2e8f0; font-style: italic; font-size: 13.5px; margin: 0; line-height: 1.5;">
-                        "${recommendation}"
-                    </p>
-                </div>
             </div>
         </div>
     `;
