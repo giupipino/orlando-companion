@@ -335,5 +335,72 @@ main{
     padding:20px;
 
 }
+.park-grid{
 
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:22px;
+
+}
+
+.park-card{
+
+    border-radius:22px;
+
+    padding:26px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:1px solid var(--border);
+
+    background:var(--surface);
+
+}
+
+.park-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.park-card .emoji{
+
+    font-size:42px;
+
+}
+
+.park-card h3{
+
+    margin-top:16px;
+
+}
+
+.park-card .date{
+
+    color:var(--text2);
+
+    margin:8px 0 18px;
+
+}
+
+.open-button{
+
+    margin-top:20px;
+
+    display:inline-block;
+
+    padding:10px 16px;
+
+    border-radius:999px;
+
+    background:var(--purple);
+
+    color:white;
+
+    font-weight:600;
+}
 }
