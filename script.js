@@ -1,18 +1,10 @@
 let currentProfile = "giu";
 let currentPark = "home";
 
-let visitedAttractions = [];
-try {
-    visitedAttractions = JSON.parse(localStorage.getItem('visited_attractions')) || [];
-} catch (e) {
-    visitedAttractions = [];
-}
+// Carrega as atrações já visitadas salvas no navegador
+let visitedAttractions = JSON.parse(localStorage.getItem('visited_attractions')) || [];
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (typeof appData === 'undefined') {
-        alert("Erro: O arquivo data.js não carregou corretamente!");
-        return;
-    }
     initProfiles();
     initNav();
     render();
@@ -54,6 +46,7 @@ function initNav() {
     });
 }
 
+// Controla o clique do checkbox de "Já Fui!"
 function toggleVisited(attractionId) {
     if (visitedAttractions.includes(attractionId)) {
         visitedAttractions = visitedAttractions.filter(id => id !== attractionId);
@@ -61,7 +54,7 @@ function toggleVisited(attractionId) {
         visitedAttractions.push(attractionId);
     }
     localStorage.setItem('visited_attractions', JSON.stringify(visitedAttractions));
-    render();
+    render(); // Recarrega a tela para atualizar o estilo do card
 }
 
 function render() {
@@ -79,22 +72,20 @@ function renderHome(container) {
     let html = `
         <div class="welcome-card">
             <h2>Bem-vindo ao Guia de Frio na Barriga! 🎢🎒</h2>
-            <p>Selecione seu usuário no topo para ver as dicas personalizadas.</p>
+            <p>Selecione seu usuário no topo para ver as notas e dicas personalizadas de acordo com o estômago de cada um, ou navegue pelos parques no menu lateral.</p>
         </div>
         <h3 style="margin-top: 30px; margin-bottom: 15px; color: #fff;">🗓️ Nosso Roteiro de Parques</h3>
         <div style="display: grid; gap: 12px;">
     `;
 
-    if (appData.itinerary) {
-        appData.itinerary.forEach(item => {
-            html += `
-                <div style="background: #1e293b; padding: 16px; border-radius: 8px; border-left: 4px solid #6366f1; display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-weight: bold; color: #94a3b8; font-size: 14px;">${item.date}</span>
-                    <span style="color: #f1f5f9; font-weight: 500;">${item.title}</span>
-                </div>
-            `;
-        });
-    }
+    appData.itinerary.forEach(item => {
+        html += `
+            <div style="background: #1e293b; padding: 16px; border-radius: 8px; border-left: 4px solid #6366f1; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: bold; color: #94a3b8; font-size: 14px;">${item.date}</span>
+                <span style="color: #f1f5f9; font-weight: 500;">${item.title}</span>
+            </div>
+        `;
+    });
 
     html += `</div>`;
     container.innerHTML = html;
@@ -102,17 +93,17 @@ function renderHome(container) {
 
 function renderPark(container) {
     const filtered = appData.attractions.filter(a => a.park === currentPark);
-    const parkObj = appData.parks.find(p => p.id === currentPark);
-    const parkName = parkObj ? parkObj.name : currentPark;
+    const parkName = appData.parks.find(p => p.id === currentPark).name;
 
     if (filtered.length === 0) {
         container.innerHTML = `<h2>${parkName}</h2><p style="color: #94a3b8;">Nenhuma atração listada para este parque.</p>`;
         return;
     }
 
+    // Proteção adicionada aqui: se fear ou a nota do perfil não existir, assume 0 para não quebrar a ordenação
     filtered.sort((a, b) => {
-        const fearA = (a.fear && a.fear[currentProfile]) ? a.fear[currentProfile] : 0;
-        const fearB = (b.fear && b.fear[currentProfile]) ? b.fear[currentProfile] : 0;
+        const fearB = b.fear && b.fear[currentProfile] !== undefined ? b.fear[currentProfile] : 0;
+        const fearA = a.fear && a.fear[currentProfile] !== undefined ? a.fear[currentProfile] : 0;
         return fearB - fearA;
     });
 
@@ -128,8 +119,9 @@ function renderPark(container) {
 }
 
 function renderAttraction(attraction) {
-    const fear = (attraction.fear && attraction.fear[currentProfile]) ? attraction.fear[currentProfile] : 0;
-    const recommendation = (attraction.recommendation && attraction.recommendation[currentProfile]) ? attraction.recommendation[currentProfile] : "";
+    // Proteção para garantir que valores vazios não quebrem a renderização dos cards individuais
+    const fear = attraction.fear && attraction.fear[currentProfile] !== undefined ? attraction.fear[currentProfile] : 0;
+    const recommendation = attraction.recommendation && attraction.recommendation[currentProfile] ? attraction.recommendation[currentProfile] : "Sem recomendação cadastrada.";
     const isVisited = visitedAttractions.includes(attraction.id);
     
     let color = "#60a5fa";
@@ -137,43 +129,49 @@ function renderAttraction(attraction) {
     if (currentProfile === "ester") color = "#3B82F6";
     if (currentProfile === "gabriel") color = "#EF4444";
 
+    // Tag HTML da imagem (carrega apenas se existir imagem cadastrada)
     const imageHtml = attraction.image 
-        ? `<img src="${attraction.image}" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-top: 12px; margin-bottom: 4px; ${isVisited ? 'filter: grayscale(100%); opacity: 0.5;' : ''}" alt="${attraction.name}">`
+        ? `<img src="${attraction.image}" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-top: 12px; margin-bottom: 4px; ${isVisited ? 'filter: grayscale(100%) cubic-bezier(0.4, 0, 0.2, 1); opacity: 0.5;' : ''}" alt="${attraction.name}">`
         : '';
 
     return `
-        <div class="card" style="padding: 18px; margin-bottom: 0; position: relative; border-radius: 12px; background: #1e293b; ${isVisited ? 'opacity: 0.55; background: #0f172a; border: 1px dashed #334155;' : ''}">
+        <div class="card" style="padding: 18px; margin-bottom: 0; position: relative; border-radius: 12px; transition: all 0.3s ease; ${isVisited ? 'opacity: 0.55; background: #0f172a; border: 1px dashed #334155;' : ''}">
+            
             <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 8px;">
                 <div>
                     <h3 style="font-size: 18px; margin: 0 0 4px 0; color: #fff; ${isVisited ? 'text-decoration: line-through; color: #64748b;' : ''}">${attraction.name}</h3>
-                    <p style="color: #cbd5e1; font-size: 13px; margin: 0; line-height: 1.4;">${attraction.type || ''}</p>
+                    <p style="color: #cbd5e1; font-size: 13px; margin: 0; line-height: 1.4;">${attraction.type || 'Atração comercial'}</p>
                 </div>
+                
                 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
                     <span style="font-size: 11px; padding: 4px 8px; border-radius: 12px; background: ${attraction.express ? 'rgba(6,95,70,0.4)' : 'rgba(153,27,27,0.4)'}; color: ${attraction.express ? '#34d399' : '#f87171'}; border: 1px solid ${attraction.express ? '#065f46' : '#991b1b'}; font-weight: 600;">
                         ${attraction.express ? '⚡ Express/LL' : '⏱️ Normal'}
                     </span>
-                    <label style="display: flex; align-items: center; gap: 6px; background: #1e293b; padding: 4px 10px; border-radius: 12px; border: 1px solid #334155; cursor: pointer; font-size: 12px; color: #e2e8f0;">
-                        <input type="checkbox" ${isVisited ? 'checked' : ''} onchange="toggleVisited('${attraction.id}')" style="cursor: pointer; accent-color: ${color};">
+                    
+                    <label style="display: flex; align-items: center; gap: 6px; background: #1e293b; padding: 4px 10px; border-radius: 12px; border: 1px solid #334155; cursor: pointer; font-size: 12px; color: #e2e8f0; user-select: none;">
+                        <input type="checkbox" ${isVisited ? 'checked' : ''} onchange="toggleVisited('${attraction.id}')" style="cursor: pointer; accent-color: ${color}; transform: scale(1.1);">
                         <span>${isVisited ? '✅ Fui!' : 'Já fui?'}</span>
                     </label>
                 </div>
             </div>
+            
             ${imageHtml}
+            
             <div style="margin-top: 14px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
                     <p style="font-size: 13px; color: #94a3b8; margin: 0;">😰 Intensidade:</p>
                     <strong style="color: #fff; font-size: 14px;">${fear} / 10</strong>
                 </div>
                 <div style="height: 6px; background: #334155; border-radius: 3px; overflow: hidden;">
-                    <div style="height: 100%; background: ${color}; width: ${fear * 10}%;"></div>
+                    <div style="height: 100%; background: ${color}; width: ${fear * 10}%; transition: width 0.3s ease;"></div>
                 </div>
             </div>
-            ${recommendation ? `
+            
             <div style="background: rgba(255,255,255,0.01); padding: 12px; border-radius: 8px; border-left: 3px solid ${color}; margin-top: 14px;">
                 <p style="color: #cbd5e1; font-style: italic; font-size: 13px; margin: 0; line-height: 1.5;">
                     "${recommendation}"
                 </p>
-            </div>` : ''}
+            </div>
         </div>
     `;
 }
