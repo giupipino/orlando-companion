@@ -71,7 +71,7 @@ function render() {
 function renderHome(container) {
     let html = `
         <div class="welcome-card">
-            <h2>Bem-vindo ao Guia de Frio na Barriga! 🎢🎒</h2>
+            <h2>Bem-vindo ao Guia de Atrações! 🎢🎒</h2>
             <p>Selecione seu usuário no topo para ver as notas e dicas personalizadas de acordo com o estômago de cada um, ou navegue pelos parques no menu lateral.</p>
         </div>
         <h3 style="margin-top: 30px; margin-bottom: 15px; color: #fff;">🗓️ Nosso Roteiro de Parques</h3>
