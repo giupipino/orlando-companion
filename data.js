@@ -18,7 +18,7 @@ const appData = {
         { date: "11/09", title: "🦁 Disney's Animal Kingdom" },
         { date: "12/09", title: "🎬 Universal Studios + 🧙 Islands of Adventure" },
         { date: "13/09", title: "🌌 Universal Epic Universe" },
-        { date: "14/09", title: "🎥 Hollywood Studios" + 🚢 Cruzeiro Disney" },
+        { date: "14/09", title: "🎥 Hollywood Studios + 🚢 Cruzeiro Disney" },
         { date: "18/09", title: "🏰 Magic Kingdom" },
         { date: "19/09", title: "🛍️ Outlet / Disney Springs & Voo de Retorno" }
     ],
