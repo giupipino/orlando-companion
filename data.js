@@ -196,7 +196,7 @@ const appData = {
         },
         {
             id: "e_dk", park: "epic", name: "Mine-Cart Madness (Donkey Kong)", express: true,
-            type: "🍌 Montanha-russa de projeção com efeito de 'salto' sobre trilhos.",
+            type: "🍌 Montanha-russa de projeção com effect de 'salto' sobre trilhos.",
             fear: { giu: 6, ester: 5, gabriel: 3 },
             recommendation: {
                 giu: "O carrinho parece pular buracos no trilho. Dá pequenos frios na barriga pela surpresa visual, mas não tem quedas colossais.",
