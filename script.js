@@ -82,7 +82,7 @@ function renderHome(container) {
         html += `
             <div style="background: #1e293b; padding: 16px; border-radius: 8px; border-left: 4px solid #6366f1; display: flex; justify-content: space-between; align-items: center;">
                 <span style="font-weight: bold; color: #94a3b8; font-size: 14px;">${item.date}</span>
-                <span style="color: #f1f5f9; font-weight: 500;">${item.park}</span>
+                <span style="color: #f1f5f9; font-weight: 500;">${item.title}</span>
             </div>
         `;
     });
