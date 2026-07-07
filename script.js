@@ -71,7 +71,7 @@ function render() {
 function renderHome(container) {
     let html = `
         <div class="welcome-card">
-            <h2>Bem-vindo ao Guia de Atrações! 🎢🎒</h2>
+            <h2>Bem-vindo ao Guia de Frio na Barriga! 🎢🎒</h2>
             <p>Selecione seu usuário no topo para ver as notas e dicas personalizadas de acordo com o estômago de cada um, ou navegue pelos parques no menu lateral.</p>
         </div>
         <h3 style="margin-top: 30px; margin-bottom: 15px; color: #fff;">🗓️ Nosso Roteiro de Parques</h3>
@@ -124,10 +124,17 @@ function renderAttraction(attraction) {
     if (currentProfile === "ester") color = "#3B82F6";
     if (currentProfile === "gabriel") color = "#EF4444";
 
+    // Cria a tag da imagem apenas se ela estiver definida no data.js
+    let imageHtml = "";
+    if (attraction.image && attraction.image !== "") {
+        imageHtml = `<img src="${attraction.image}" alt="${attraction.name}" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px; ${isVisited ? 'filter: grayscale(100%) opacity(0.5);' : ''}">`;
+    }
+
     return `
         <div class="card" style="padding: 18px; margin-bottom: 0; position: relative; border-radius: 12px; transition: all 0.3s ease; ${isVisited ? 'opacity: 0.45; background: #0f172a; border: 1px dashed #334155;' : ''}">
             
-            <!-- Linha do Topo: Nome e Tags -->
+            ${imageHtml}
+
             <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 8px;">
                 <div>
                     <h3 style="font-size: 18px; margin: 0 0 4px 0; color: #fff; ${isVisited ? 'text-decoration: line-through; color: #64748b;' : ''}">${attraction.name}</h3>
@@ -135,12 +142,10 @@ function renderAttraction(attraction) {
                 </div>
                 
                 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
-                    <!-- Tag Fura-Fila -->
                     <span style="font-size: 11px; padding: 4px 8px; border-radius: 12px; background: ${attraction.express ? 'rgba(6,95,70,0.4)' : 'rgba(153,27,27,0.4)'}; color: ${attraction.express ? '#34d399' : '#f87171'}; border: 1px solid ${attraction.express ? '#065f46' : '#991b1b'}; font-weight: 600;">
                         ${attraction.express ? '⚡ Express/LL' : '⏱️ Normal'}
                     </span>
                     
-                    <!-- Checkbox Já Fui -->
                     <label style="display: flex; align-items: center; gap: 6px; background: #1e293b; padding: 4px 10px; border-radius: 12px; border: 1px solid #334155; cursor: pointer; font-size: 12px; color: #e2e8f0; user-select: none;">
                         <input type="checkbox" ${isVisited ? 'checked' : ''} onchange="toggleVisited('${attraction.id}')" style="cursor: pointer; accent-color: ${color}; transform: scale(1.1);">
                         <span>${isVisited ? '✅ Fui!' : 'Já fui?'}</span>
@@ -148,7 +153,6 @@ function renderAttraction(attraction) {
                 </div>
             </div>
             
-            <!-- Medidor de Frio na Barriga -->
             <div style="margin-top: 14px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
                     <p style="font-size: 13px; color: #94a3b8; margin: 0;">😰 Intensidade:</p>
@@ -159,7 +163,6 @@ function renderAttraction(attraction) {
                 </div>
             </div>
             
-            <!-- Comentário do usuário -->
             <div style="background: rgba(255,255,255,0.01); padding: 12px; border-radius: 8px; border-left: 3px solid ${color}; margin-top: 14px;">
                 <p style="color: #cbd5e1; font-style: italic; font-size: 13px; margin: 0; line-height: 1.5;">
                     "${recommendation}"
