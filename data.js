@@ -18,13 +18,13 @@ const appData = {
         { date: "11/09", title: "🦁 Disney's Animal Kingdom" },
         { date: "12/09", title: "🎬 Universal Studios + 🧙 Islands of Adventure" },
         { date: "13/09", title: "🌌 Universal Epic Universe" },
-        { date: "14/09", title: "🎥 Hollywood Studios + 🚢 Cruzeiro Disney" },
+        { date: "14/09", title: "🚢 Cruzeiro Disney (Embarque)" },
         { date: "18/09", title: "🏰 Magic Kingdom" },
         { date: "19/09", title: "🛍️ Outlet / Disney Springs & Voo de Retorno" }
     ],
     attractions: [
         {
-            id: "u_rockit", park: "universal", name: "Hollywood Rip Ride Rockit", express: true,
+            id: "u_rockit", park: "universal", name: "Hollywood Rip Ride Rockit", express: true, image: "imagens/Hollywood Rip Ride Rockit.jpeg",
             type: "🎢 Montanha-russa de alta velocidade com subida vertical de 90°.",
             fear: { giu: 10, ester: 8, gabriel: 6 },
             recommendation: {
@@ -34,7 +34,7 @@ const appData = {
             }
         },
         {
-            id: "u_mummy", park: "universal", name: "Revenge of the Mummy", express: true,
+            id: "u_mummy", park: "universal", name: "Revenge of the Mummy", express: true, image: "",
             type: "=== Montanha-russa no escuro com lançamentos rápidos.",
             fear: { giu: 6, ester: 4, gabriel: 2 },
             recommendation: {
@@ -44,7 +44,7 @@ const appData = {
             }
         },
         {
-            id: "u_gringotts", park: "universal", name: "Harry Potter & Escape from Gringotts", express: true,
+            id: "u_gringotts", park: "universal", name: "Harry Potter & Escape from Gringotts", express: true, image: "",
             type: "=== Simulador 3D híbrido com trilhos.",
             fear: { giu: 4, ester: 3, gabriel: 1 },
             recommendation: {
@@ -54,7 +54,7 @@ const appData = {
             }
         },
         {
-            id: "u_simpsons", park: "universal", name: "The Simpsons Ride", express: true,
+            id: "u_simpsons", park: "universal", name: "The Simpsons Ride", express: true, image: "",
             type: "=== Simulador de movimento com tela gigante côncava.",
             fear: { giu: 5, ester: 5, gabriel: 2 },
             recommendation: {
@@ -64,7 +64,7 @@ const appData = {
             }
         },
         {
-            id: "u_minions", park: "universal", name: "Despicable Me Minion Mayhem", express: true,
+            id: "u_minions", park: "universal", name: "Despicable Me Minion Mayhem", express: true, image: "",
             type: "=== Simulador de base móvel 3D.",
             fear: { giu: 3, ester: 3, gabriel: 1 },
             recommendation: {
@@ -74,7 +74,7 @@ const appData = {
             }
         },
         {
-            id: "u_transformers", park: "universal", name: "TRANSFORMERS: The Ride-3D", express: true,
+            id: "u_transformers", park: "universal", name: "TRANSFORMERS: The Ride-3D", express: true, image: "",
             type: "=== Simulador em trilhos com movimentos rápidos.",
             fear: { giu: 3, ester: 2, gabriel: 1 },
             recommendation: {
@@ -84,7 +84,7 @@ const appData = {
             }
         },
         {
-            id: "u_fallon", park: "universal", name: "Race Through New York Starring Jimmy Fallon", express: true,
+            id: "u_fallon", park: "universal", name: "Race Through New York Starring Jimmy Fallon", express: true, image: "",
             type: "=== Simulador de teatro voador (estilo cinema).",
             fear: { giu: 2, ester: 2, gabriel: 1 },
             recommendation: {
@@ -94,7 +94,7 @@ const appData = {
             }
         },
         {
-            id: "u_fast", park: "universal", name: "Fast & Furious - Supercharged", express: true,
+            id: "u_fast", park: "universal", name: "Fast & Furious - Supercharged", express: true, image: "",
             type: "=== Simulador imersivo dentro de um ônibus.",
             fear: { giu: 1, ester: 1, gabriel: 1 },
             recommendation: {
@@ -104,7 +104,7 @@ const appData = {
             }
         },
         {
-            id: "u_mib", park: "universal", name: "MEN IN BLACK Alien Attack", express: true,
+            id: "u_mib", park: "universal", name: "MEN IN BLACK Alien Attack", express: true, image: "",
             type: "=== Carrinho de tiro com giros intensos.",
             fear: { giu: 2, ester: 2, gabriel: 1 },
             recommendation: {
@@ -114,17 +114,17 @@ const appData = {
             }
         },
         {
-            id: "u_et", park: "universal", name: "E.T. Adventure", express: true,
+            id: "u_et", park: "universal", name: "E.T. Adventure", express: true, image: "",
             type: "=== Atração escura clássica (bicicletas suspensas).",
             fear: { giu: 1, ester: 1, gabriel: 0 },
             recommendation: {
                 giu: "Nostálgico, lento e relaxante. As bicicletas flutuam suavemente pelo cenário. Zero frio na barriga.",
-                ester: "Uma gracinha de atração, música calma e cheiro nostálgico de floresta.",
+                ester: "Uma gracinha de atração, música calma and cheiro nostálgico de floresta.",
                 gabriel: "Um clássico histórico do parque que deve ser respeitado."
             }
         },
         {
-            id: "u_minionblast", park: "universal", name: "Villain-Con Minion Blast", express: true,
+            id: "u_minionblast", park: "universal", name: "Villain-Con Minion Blast", express: true, image: "",
             type: "=== Atração de tiro em esteira rolante (de pé).",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
@@ -134,7 +134,7 @@ const appData = {
             }
         },
         {
-            id: "u_express", park: "universal", name: "Hogwarts Express", express: true,
+            id: "u_express", park: "universal", name: "Hogwarts Express", express: true, image: "",
             type: "=== Trem temático que conecta os dois parques.",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
@@ -144,7 +144,7 @@ const appData = {
             }
         },
         {
-            id: "u_animals", park: "universal", name: "Animal Actors on Location!", express: true,
+            id: "u_animals", park: "universal", name: "Animal Actors on Location!", express: true, image: "",
             type: "=== Show ao vivo com animais adestrados.",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
@@ -154,7 +154,7 @@ const appData = {
             }
         },
         {
-            id: "u_bourne", park: "universal", name: "The Bourne Stuntacular", express: true,
+            id: "u_bourne", park: "universal", name: "The Bourne Stuntacular", express: true, image: "",
             type: "=== Show de dublês de ação com efeitos especiais.",
             fear: { giu: 1, ester: 1, gabriel: 0 },
             recommendation: {
@@ -164,7 +164,7 @@ const appData = {
             }
         },
         {
-            id: "u_makeup", park: "universal", name: "Universal Orlando's Horror Make-Up Show", express: true,
+            id: "u_makeup", park: "universal", name: "Universal Orlando's Horror Make-Up Show", express: true, image: "",
             type: "=== Show de comédia e efeitos de maquiagem de terror.",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
@@ -174,7 +174,7 @@ const appData = {
             }
         },
         {
-            id: "e_racers", park: "epic", name: "Stardust Racers", express: true,
+            id: "e_racers", park: "epic", name: "Stardust Racers", express: true, image: "",
             type: "🚀 Montanha-russa de duelo de alta velocidade (lançamento duplo).",
             fear: { giu: 9, ester: 8, gabriel: 6 },
             recommendation: {
@@ -184,7 +184,7 @@ const appData = {
             }
         },
         {
-            id: "e_dk", park: "epic", name: "Mine-Cart Madness (Donkey Kong)", express: true,
+            id: "e_dk", park: "epic", name: "Mine-Cart Madness (Donkey Kong)", express: true, image: "",
             type: "🍌 Montanha-russa de projeção com efeito de 'salto' sobre trilhos.",
             fear: { giu: 6, ester: 5, gabriel: 3 },
             recommendation: {
@@ -194,7 +194,7 @@ const appData = {
             }
         },
         {
-            id: "e_wolf", park: "epic", name: "Curse of the Werewolf", express: true,
+            id: "e_wolf", park: "epic", name: "Curse of the Werewolf", express: true, image: "",
             type: "🐺 Montanha-russa giratória familiar lancada.",
             fear: { giu: 5, ester: 4, gabriel: 2 },
             recommendation: {
@@ -204,7 +204,7 @@ const appData = {
             }
         },
         {
-            id: "e_frank", park: "epic", name: "Monsters Unchained: Frankenstein Experiment", express: true,
+            id: "e_frank", park: "epic", name: "Monsters Unchained: Frankenstein Experiment", express: true, image: "",
             type: "🧟 Dark ride de braço robótico de alta movimentação.",
             fear: { giu: 6, ester: 5, gabriel: 3 },
             recommendation: {
@@ -214,7 +214,7 @@ const appData = {
             }
         },
         {
-            id: "e_ministry", park: "epic", name: "Harry Potter and the Battle at Ministry", express: true,
+            id: "e_ministry", park: "epic", name: "Harry Potter and the Battle at Ministry", express: true, image: "",
             type: "🪄 Dark ride tecnológica de movimentação ágil.",
             fear: { giu: 4, ester: 3, gabriel: 1 },
             recommendation: {
@@ -224,7 +224,7 @@ const appData = {
             }
         },
         {
-            id: "e_mariokart", park: "epic", name: "Mario Kart: Bowser’s Challenge", express: true,
+            id: "e_mariokart", park: "epic", name: "Mario Kart: Bowser’s Challenge", express: true, image: "",
             type: "🍄 Atração interativa com Realidade Aumentada.",
             fear: { giu: 2, ester: 2, gabriel: 1 },
             recommendation: {
@@ -234,7 +234,7 @@ const appData = {
             }
         },
         {
-            id: "e_dragonrally", park: "epic", name: "Dragon Racer’s Rally", express: true,
+            id: "e_dragonrally", park: "epic", name: "Dragon Racer’s Rally", express: true, image: "",
             type: "🐉 Atração de voo acrobático controlado pelo passageiro.",
             fear: { giu: 7, ester: 6, gabriel: 4 },
             recommendation: {
@@ -244,7 +244,7 @@ const appData = {
             }
         },
         {
-            id: "e_fyredrill", park: "epic", name: "Fyre Drill", express: true,
+            id: "e_fyredrill", park: "epic", name: "Fyre Drill", express: true, image: "",
             type: "💦 Batalha de barcos com jatos d'água.",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
@@ -254,7 +254,7 @@ const appData = {
             }
         },
         {
-            id: "e_gliders", park: "epic", name: "Hiccup’s Wing Gliders", express: true,
+            id: "e_gliders", park: "epic", name: "Hiccup’s Wing Gliders", express: true, image: "",
             type: "🍃 Montanha-russa familiar lançada (estilo voo).",
             fear: { giu: 4, ester: 3, gabriel: 2 },
             recommendation: {
@@ -264,7 +264,7 @@ const appData = {
             }
         },
         {
-            id: "e_carousel", park: "epic", name: "Constellation Carousel", express: true,
+            id: "e_carousel", park: "epic", name: "Constellation Carousel", express: true, image: "",
             type: "🌌 Carrossel moderno com constelações giratórias.",
             fear: { giu: 1, ester: 1, gabriel: 0 },
             recommendation: {
@@ -274,7 +274,7 @@ const appData = {
             }
         },
         {
-            id: "e_astronomica", park: "epic", name: "Astronomica", express: false,
+            id: "e_astronomica", park: "epic", name: "Astronomica", express: false, image: "",
             type: "⛲ Área de fontes dançantes e interativas com água.",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
@@ -284,7 +284,7 @@ const appData = {
             }
         },
         {
-            id: "e_yoshi", park: "epic", name: "Yoshi’s Adventure", express: true,
+            id: "e_yoshi", park: "epic", name: "Yoshi’s Adventure", express: true, image: "",
             type: "🦖 Passeio elevado e lento em carrinhos do Yoshi.",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
@@ -294,7 +294,7 @@ const appData = {
             }
         },
         {
-            id: "e_arcanus", park: "epic", name: "Le Cirque Arcanus", express: true,
+            id: "e_arcanus", park: "epic", name: "Le Cirque Arcanus", express: true, image: "",
             type: "🎪 Show teatral com acrobatas e criaturas mágicas.",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
@@ -304,7 +304,7 @@ const appData = {
             }
         },
         {
-            id: "e_untrainable", park: "epic", name: "The Untrainable Dragon", express: true,
+            id: "e_untrainable", park: "epic", name: "The Untrainable Dragon", express: true, image: "",
             type: "🎭 Show musical ao vivo com dragões giants voando.",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
@@ -314,7 +314,7 @@ const appData = {
             }
         },
         {
-            id: "e_cinesational", park: "epic", name: "CineSational: A Symphonic Spectacular", express: false,
+            id: "e_cinesational", park: "epic", name: "CineSational: A Symphonic Spectacular", express: false, image: "",
             type: "🎆 Show de encerramento com fontes, luzes e fogos.",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
@@ -324,7 +324,7 @@ const appData = {
             }
         },
         {
-            id: "i_velocicoaster", park: "islands", name: "Jurassic World VelociCoaster", express: true,
+            id: "i_velocicoaster", park: "islands", name: "Jurassic World VelociCoaster", express: true, image: "",
             type: "🦖 Montanha-russa de lançamento duplo de extrema velocidade com inversões.",
             fear: { giu: 10, ester: 9, gabriel: 7 },
             recommendation: {
@@ -334,7 +334,7 @@ const appData = {
             }
         },
         {
-            id: "i_hulk", park: "islands", name: "The Incredible Hulk Coaster", express: true,
+            id: "i_hulk", park: "islands", name: "The Incredible Hulk Coaster", express: true, image: "",
             type: "🤢 Montanha-russa de alta velocidade com lançamento inclinado e 7 loops.",
             fear: { giu: 9, ester: 8, gabriel: 6 },
             recommendation: {
@@ -344,7 +344,7 @@ const appData = {
             }
         },
         {
-            id: "i_hagrid", park: "islands", name: "Hagrid's Magical Creatures Motorbike Adventure", express: false,
+            id: "i_hagrid", park: "islands", name: "Hagrid's Magical Creatures Motorbike Adventure", express: false, image: "",
             type: "🏍️ Montanha-russa de lançamento múltiplo com queda vertical de trilho.",
             fear: { giu: 7, ester: 5, gabriel: 3 },
             recommendation: {
@@ -354,7 +354,7 @@ const appData = {
             }
         },
         {
-            id: "m_space", park: "magic", name: "Space Mountain", express: true,
+            id: "m_space", park: "magic", name: "Space Mountain", express: true, image: "",
             type: "🚀 Montanha-russa clássica totalmente no escuro.",
             fear: { giu: 6, ester: 5, gabriel: 3 },
             recommendation: {
@@ -364,7 +364,7 @@ const appData = {
             }
         },
         {
-            id: "m_tron", park: "magic", name: "TRON Lightcycle / Run", express: true,
+            id: "m_tron", park: "magic", name: "TRON Lightcycle / Run", express: true, image: "",
             type: "🏍️ Montanha-russa de lançamento em alta velocidade.",
             fear: { giu: 6, ester: 4, gabriel: 2 },
             recommendation: {
@@ -374,14 +374,10 @@ const appData = {
             }
         },
         {
-            id: "m_tiana", park: "magic", name: "Tiana's Bayou Adventure", express: true,
+            id: "m_tiana", park: "magic", name: "Tiana's Bayou Adventure", express: true, image: "",
             type: "🛶 Passeio de barco na água com uma queda livre grande.",
             fear: { giu: 7, ester: 6, gabriel: 4 },
             recommendation: {
                 giu: "O passeio inteiro é calmo e musical, mas termina com uma queda livre clássica de 15 metros. Dá aquele vazio no estômago clássico.",
                 ester: "A queda final dá bastante frio na barriga e espirra bastante água na frente.",
-                gabriel: "Visual reformulado lindo, vale muito a pena conferir."
-            }
-        }
-    ]
-};
+                gabriel: "
