@@ -162,11 +162,4 @@ function renderAttraction(attraction) {
                 </div>
             </div>
             
-            <div style="background: rgba(255,255,255,0.01); padding: 12px; border-radius: 8px; border-left: 3px solid ${color}; margin-top: 14px;">
-                <p style="color: #cbd5e1; font-style: italic; font-size: 13px; margin: 0; line-height: 1.5;">
-                    "${recommendation}"
-                </p>
-            </div>
-        </div>
-    `;
-}
+            <div style="background: rgba(255,255,255,0.01); padding: 12px; border-radius: 8px; border-left: 3px solid ${
