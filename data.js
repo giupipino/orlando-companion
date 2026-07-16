@@ -35,7 +35,6 @@ const appData = {
         },
         {
             id: "u_mummy", park: "universal", name: "Revenge of the Mummy", express: true,
-            image: "Revenge of the Mummy .jpeg",
             type: "🎬 Montanha-russa no escuro com lançamentos rápidos.",
             fear: { giu: 6, ester: 4, gabriel: 2 },
             recommendation: {
@@ -46,7 +45,6 @@ const appData = {
         },
         {
             id: "u_gringotts", park: "universal", name: "Harry Potter & Escape from Gringotts", express: true,
-            image: "Harry Potter & Escape from Gringotts.jpg",
             type: "🧙 Simulador 3D híbrido com trilhos.",
             fear: { giu: 4, ester: 3, gabriel: 1 },
             recommendation: {
@@ -57,7 +55,6 @@ const appData = {
         },
         {
             id: "u_simpsons", park: "universal", name: "The Simpsons Ride", express: true,
-            image: "The Simpsons Ride.jpeg",
             type: "📺 Simulador de movimento com tela gigante côncava.",
             fear: { giu: 5, ester: 5, gabriel: 2 },
             recommendation: {
@@ -68,7 +65,6 @@ const appData = {
         },
         {
             id: "u_minions", park: "universal", name: "Despicable Me Minion Mayhem", express: true,
-            image: "Despicable Me Minion Mayhem.jpeg",
             type: "🍌 Simulador de base móvel 3D.",
             fear: { giu: 3, ester: 3, gabriel: 1 },
             recommendation: {
@@ -79,7 +75,6 @@ const appData = {
         },
         {
             id: "u_transformers", park: "universal", name: "TRANSFORMERS: The Ride-3D", express: true,
-            image: "TRANSFORMERS- The Ride-3D.jpeg",
             type: "🤖 Simulador em trilhos com movimentos rápidos.",
             fear: { giu: 3, ester: 2, gabriel: 1 },
             recommendation: {
@@ -90,7 +85,6 @@ const appData = {
         },
         {
             id: "u_fallon", park: "universal", name: "Race Through New York Starring Jimmy Fallon", express: true,
-            image: "Race Through New York Starring Jimmy Fallon .jpeg",
             type: "🗽 Simulador de teatro voador.",
             fear: { giu: 2, ester: 2, gabriel: 1 },
             recommendation: {
@@ -111,7 +105,6 @@ const appData = {
         },
         {
             id: "u_mib", park: "universal", name: "MEN IN BLACK Alien Attack", express: true,
-            image: "MEN IN BLACK Alien Attack.jpeg",
             type: "👽 Carrinho de tiro com giros intensos.",
             fear: { giu: 2, ester: 2, gabriel: 1 },
             recommendation: {
@@ -122,7 +115,6 @@ const appData = {
         },
         {
             id: "u_et", park: "universal", name: "E.T. Adventure", express: true,
-            image: "E.T. Adventure.jpeg",
             type: "🚲 Atração escura clássica.",
             fear: { giu: 1, ester: 1, gabriel: 0 },
             recommendation: {
@@ -133,7 +125,6 @@ const appData = {
         },
         {
             id: "u_minionblast", park: "universal", name: "Villain-Con Minion Blast", express: true,
-            image: "Villain-Con Minion Blast.jpeg",
             type: "🎯 Atração de tiro em esteira rolante (de pé).",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
@@ -144,7 +135,6 @@ const appData = {
         },
         {
             id: "u_express", park: "universal", name: "Hogwarts Express", express: true,
-            image: "Hogwarts Express .jpeg",
             type: "🚂 Trem temático que conecta os dois parques.",
             fear: { giu: 0, ester: 0, gabriel: 0 },
             recommendation: {
@@ -165,7 +155,6 @@ const appData = {
         },
         {
             id: "u_bourne", park: "universal", name: "The Bourne Stuntacular", express: true,
-            image: "The Bourne Stuntacular.jpg",
             type: "💥 Show de dublês de ação com efeitos especiais.",
             fear: { giu: 1, ester: 1, gabriel: 0 },
             recommendation: {
@@ -196,7 +185,7 @@ const appData = {
         },
         {
             id: "e_dk", park: "epic", name: "Mine-Cart Madness (Donkey Kong)", express: true,
-            type: "🍌 Montanha-russa de projeção com effect de 'salto' sobre trilhos.",
+            type: "🍌 Montanha-russa de projeção com efeito de 'salto' sobre trilhos.",
             fear: { giu: 6, ester: 5, gabriel: 3 },
             recommendation: {
                 giu: "O carrinho parece pular buracos no trilho. Dá pequenos frios na barriga pela surpresa visual, mas não tem quedas colossais.",
