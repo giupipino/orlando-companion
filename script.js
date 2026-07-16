@@ -93,14 +93,19 @@ function renderHome(container) {
 
 function renderPark(container) {
     const filtered = appData.attractions.filter(a => a.park === currentPark);
-    const parkName = appData.parks.find(p => p.id === currentPark).name;
+    const parkObj = appData.parks.find(p => p.id === currentPark);
+    const parkName = parkObj ? parkObj.name : currentPark;
 
     if (filtered.length === 0) {
-        container.innerHTML = `<h2>${parkName}</h2><p style="color: #94a3b8;">Nenhuma atração listada para este parque.</p>`;
+        container.innerHTML = `
+            <h2 style="margin-bottom: 20px; color: #fff;">${parkName}</h2>
+            <div style="background: #1e293b; padding: 24px; border-radius: 12px; text-align: center; border: 1px dashed #334155;">
+                <p style="color: #94a3b8; margin: 0; font-size: 15px;">📍 Nenhuma atração cadastrada para este parque ainda.</p>
+            </div>`;
         return;
     }
 
-    // Proteção adicionada aqui: se fear ou a nota do perfil não existir, assume 0 para não quebrar a ordenação
+    // Ordenação segura (evita quebrar se esquecer alguma nota)
     filtered.sort((a, b) => {
         const fearB = b.fear && b.fear[currentProfile] !== undefined ? b.fear[currentProfile] : 0;
         const fearA = a.fear && a.fear[currentProfile] !== undefined ? a.fear[currentProfile] : 0;
@@ -119,7 +124,6 @@ function renderPark(container) {
 }
 
 function renderAttraction(attraction) {
-    // Proteção para garantir que valores vazios não quebrem a renderização dos cards individuais
     const fear = attraction.fear && attraction.fear[currentProfile] !== undefined ? attraction.fear[currentProfile] : 0;
     const recommendation = attraction.recommendation && attraction.recommendation[currentProfile] ? attraction.recommendation[currentProfile] : "Sem recomendação cadastrada.";
     const isVisited = visitedAttractions.includes(attraction.id);
@@ -129,18 +133,13 @@ function renderAttraction(attraction) {
     if (currentProfile === "ester") color = "#3B82F6";
     if (currentProfile === "gabriel") color = "#EF4444";
 
-    // Tag HTML da imagem (carrega apenas se existir imagem cadastrada)
-    const imageHtml = attraction.image 
-        ? `<img src="${attraction.image}" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-top: 12px; margin-bottom: 4px; ${isVisited ? 'filter: grayscale(100%) cubic-bezier(0.4, 0, 0.2, 1); opacity: 0.5;' : ''}" alt="${attraction.name}">`
-        : '';
-
     return `
         <div class="card" style="padding: 18px; margin-bottom: 0; position: relative; border-radius: 12px; transition: all 0.3s ease; ${isVisited ? 'opacity: 0.55; background: #0f172a; border: 1px dashed #334155;' : ''}">
             
             <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 8px;">
                 <div>
                     <h3 style="font-size: 18px; margin: 0 0 4px 0; color: #fff; ${isVisited ? 'text-decoration: line-through; color: #64748b;' : ''}">${attraction.name}</h3>
-                    <p style="color: #cbd5e1; font-size: 13px; margin: 0; line-height: 1.4;">${attraction.type || 'Atração comercial'}</p>
+                    <p style="color: #cbd5e1; font-size: 13px; margin: 0; line-height: 1.4;">${attraction.type || 'Atração'}</p>
                 </div>
                 
                 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
@@ -154,8 +153,6 @@ function renderAttraction(attraction) {
                     </label>
                 </div>
             </div>
-            
-            ${imageHtml}
             
             <div style="margin-top: 14px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
